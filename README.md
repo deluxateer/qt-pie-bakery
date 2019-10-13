@@ -18,9 +18,6 @@ A multi-purpose dev toolkit by Deluxateer. It is designed to streamline developm
 5. __Assets:__ Minifies images for production.
 6. __Live Server:__ Spin up Browsersync for cross-device service with hot-reloading.
 
-### To Be Implemented:
-* Unit Testing
-
 ## How To Use:
 
 ### `npm run build`
