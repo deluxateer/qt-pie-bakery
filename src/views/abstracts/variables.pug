@@ -1,0 +1,54 @@
+//- -----------------------------------------------------------------------------
+//- This file contains all application-wide Pug variables.
+//- -----------------------------------------------------------------------------
+
+//- global head configurations
+//- @prop {String} keys - meta tag name
+//- @prop {Object} values - meta tag content
+-
+  const globalHeadProps = {
+    author: "Deluxateer",
+    setFacebookAndTwitterCards: false,
+    faviconPath: "./favicon.ico",
+    themeColor: "#41B6E8",
+  };
+
+//- base url for assets (in dist)
+//- @type String
+- const baseURL = './';
+
+//- ***************** INSERT YOUR CUSTOM GLOBAL VARIABLES BELOW *****************
+
+//- navbar items
+//- @prop {String} keys - Title for the navbar link
+//- @prop {Object} values - URL that the link points to
+-
+  const navbarItems = {
+    'Menu': '#menu',
+    'Catering & Parties': '#catering-and-parties',
+    'About': '#about',
+    'Contact': '#contact',
+  }
+
+//- social media navitems
+//- @prop {String} keys - name of social media service
+//- @prop {Object} values - icon classes from fontawesome and url that of your social media profile
+-
+  const socialMediaItems = {
+    yelp: {
+      icon: 'fab fa-yelp',
+      url: '#!',
+    },
+    instagram: {
+      icon: 'fab fa-instagram',
+      url: '#!',
+    },
+    facebook: {
+      icon: 'fab fa-facebook',
+      url: '#!',
+    },
+    pinterest: {
+      icon: 'fab fa-pinterest',
+      url: '#!',
+    },
+  }

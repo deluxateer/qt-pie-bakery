@@ -1,0 +1,24 @@
+//- -----------------------------------------------------------------------------
+//- This file contains all markup related to the navbar.
+//- -----------------------------------------------------------------------------
+
+//- Generates navlinks (li + a) excluding the logo's link
+//- @param {String} text - text for the link
+//- @param {String} url - URL that the link points to
+//- @param {String} activeNavbarItem - navbar item that is currently active
+mixin navbar-items(text, url, activeNavbarItem)
+  li
+    a.navbar-link(href=url, class=(activeNavbarItem && text.toLowerCase() === activeNavbarItem.toLowerCase()) ? '.navbar-link-active' : null)= text
+
+//- Generates a generic navbar with hamburger menu and brand logo on mobile
+//- @param {Object} navbarItems - links to use for the navbar, excluding the logo
+//- @param {String} activeNavbarItem - navbar item that is currently active
+mixin navbar(navbarItems, activeNavbarItem)
+  nav.navbar
+    .mobile-nav-display
+      a.brand-logo(href='/') DeluxThreads
+      button.navbar-toggle
+        i.fas.fa-bars
+    ul.navbar-submenu
+      each value, key in navbarItems
+        +navbar-items(key, value, activeNavbarItem)
