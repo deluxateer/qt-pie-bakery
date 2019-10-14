@@ -10,16 +10,23 @@
 /* stylelint-enable */
 
 $navbar-bgc: #fff;
-$nav-link-responsive-bg-color: color('gray');
-$nav-link-hover-bg-color: color('gray');
+$nav-link-responsive-bg-color: color('blue', 'light');
+$nav-link-hover-bg-color: color('blue', 'light');
 
 .mobile-nav-display {
   @include flex-space-between-children;
 }
 
-.brand-logo,
 .navbar-toggle {
   font-size: 1.875rem;
+}
+
+.brand-logo img {
+  width: 80px;
+
+  @include respond-to('min-medium') {
+    width: 120px;
+  }
 }
 
 .navbar {
@@ -60,23 +67,32 @@ $nav-link-hover-bg-color: color('gray');
   li { text-align: center; }
 
   li + li { margin-top: 1.3rem; }
+}
 
-  &-link {
-    display: block;
-    font-size: 1.5625rem;
-    background-color: $nav-link-responsive-bg-color;
-    padding: 10px;
-    border-radius: 12px;
+.navbar-link {
+  display: block;
+  font-size: 1.4rem;
+  background-color: $nav-link-responsive-bg-color;
+  padding: 10px;
+  border-radius: 12px;
+
+  &-active {
+    color: color('gray');
+
+    @include on-event {
+      color: color('gray');
+      background-color: initial;
+    }
   }
 }
 
-@media screen and (min-width: 1200px) {
+@include respond-to('min-large') {
 
   .mobile-nav-display { display: initial; }
 
   .navbar {
     @include flex-space-between-children;
-    padding: 2.6875rem 6%;
+    padding: 1.3rem 6%;
     margin: 0 auto;
 
     &-toggle { display: none; }
@@ -104,6 +120,12 @@ $nav-link-hover-bg-color: color('gray');
     li + li,
     li:first-of-type {
       margin: 0 1rem;
+    }
+  }
+
+  .navbar-link-active {
+    @include on-event {
+      background-color: inherit;
     }
   }
 }
