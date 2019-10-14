@@ -11,4 +11,14 @@
   font-size: 2rem;
 
   + li { margin-left: 1.3rem; }
+
+  a {
+    color: #fff;
+    padding: 0.75rem 1rem;
+  }
+
+  .yelp { background: color('yelp'); }
+  .instagram { background: color('instagram'); }
+  .facebook { background: color('facebook'); }
+  .pinterest { background: color('pinterest'); }
 }

@@ -2,29 +2,102 @@
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
 
-footer {
-  @include text-color-bgc(shade($primary-color, 20));
-  
-  padding: 25px 0;
+.footer-content {
+  @include text-color-bgc(#fff, $text-color);
+  padding: 2rem 0;
 
-  a {
-    font-weight: bold;
-    color: $secondary-color;
+  .brand-logo {
+    display: block;
 
-    @include on-event {
-      color: tint($secondary-color, 35%);
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  .divider {
+    height: 1px;
+    width: 100%;
+    background-color: color('gray');
+    margin: 1.6rem 0;
+  }
+}
+
+.company-contact {
+  font-style: normal;
+  text-align: center;
+
+  .company-name { margin-bottom: 1rem; }
+
+  p { margin-bottom: 0.3rem; }
+}
+
+.site-links {
+  ul {
+    list-style-type: none;
+    margin: 1.6rem 0;
+  }
+
+  li {
+    text-align: center;
+    margin-bottom: 0.4rem;
+
+    a { background-color: inherit; }
+  }
+}
+
+.social-links {
+  p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .social-media-nav {
+    margin: 1.7rem 0;
+
+    li {
+      margin: 0 auto;
     }
   }
 }
 
-.disclaimer {
-  font-size: 0.7rem;
-  margin-bottom: 12px;
+.opening-hours {
+  text-align: center;
 }
 
-.site-info {
-  @include flex-space-between-children;
+.legal {
+  background-color: $primary-color;
+  padding: 25px 0;
+  
+  p { color: #fff; }
 
-  a { padding: 10px 0; }
+  &-links {
+    list-style-type: none;
+    padding-top: 1rem;
+    margin: 0;
+  }
+
+  li {
+    display: block;
+    margin-top: 1rem;
+  }
+  
+  a {
+    color: #fff;
+    padding: 0.5rem 0;
+  }
+
+  @include respond-to('min-medium') {
+    .container {
+      @include flex-space-between-children;  
+    }
+
+    &-links { padding: 0; }
+
+    li {
+      display: inline-block;
+      margin: 0;
+    }
+
+    a { padding: 0 1rem; }
+  }
 }
-

@@ -2,12 +2,37 @@
 //- This file contains all markup related to the footer.
 //- -----------------------------------------------------------------------------
 
+include ../../components/navigation
+
 footer
-  .container
-    p.disclaimer DeluxThreads sources its resources responsibly.
-    block socialMediaNav
-      +social-media-nav(socialMediaItems)
-    .site-info
-      - const currDate = new Date().getFullYear();
-      p DeluxThreads, #{currDate}
-      a(href='!#') Sitemap
+  .footer-content
+    .container
+      a.brand-logo(href='/')
+        +image('logo.png', 'Logo')
+      .divider
+      .footer-info
+        address.company-contact
+          p.company-name QT Pie Bakery
+          p 238 Sugar Rush Ln
+          p Pantown, CA 77777
+          a(href='tel:+1(111)1111') (111) 111 - 1111
+        .footer-links-hours
+          .site-links
+            ul
+              each value, key in navbarItems
+                +navbar-items(key, value, activeNavbarItem)
+          .social-links
+            p Follow Us On Social Media
+            +social-media-nav(socialMediaItems)
+          .opening-hours
+            p Opening Hours: <b>Mon-Fri:</b> 9am - 9pm / <b>Weekend:</b> 9am - 10pm
+  .legal
+    .container
+      p.copyright &copy; #{new Date().getFullYear()} QT Pie Bakery
+      ul.legal-links
+        li
+          a(href='#!') Terms &amp; Conditions
+        li
+          a(href='#!') Privacy Policy
+        li
+          a(href='#!') Sitemap

@@ -69,7 +69,7 @@ $nav-link-hover-bg-color: color('blue', 'light');
   li + li { margin-top: 1.3rem; }
 }
 
-.navbar-link {
+.nav-link {
   display: block;
   font-size: 1.4rem;
   background-color: $nav-link-responsive-bg-color;
@@ -123,7 +123,7 @@ $nav-link-hover-bg-color: color('blue', 'light');
     }
   }
 
-  .navbar-link-active {
+  .nav-link-active {
     @include on-event {
       background-color: inherit;
     }
