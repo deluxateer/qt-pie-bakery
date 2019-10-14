@@ -7,8 +7,9 @@ include ../../components/navigation
 footer
   .footer-content
     .container
-      a.brand-logo(href='/')
-        +image('logo.png', 'Logo')
+      .logo-wrapper
+        a.brand-logo(href='/')
+          +image('logo.png', 'Logo')
       .divider
       .footer-info
         address.company-contact

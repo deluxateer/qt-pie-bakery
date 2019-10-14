@@ -4,31 +4,33 @@
 
 .footer-content {
   @include text-color-bgc(#fff, $text-color);
-  padding: 2rem 0;
+  padding: 4rem 0;
 
-  .brand-logo {
-    display: block;
+  .logo-wrapper {
+    @include flex-center-children;
 
-    img {
-      margin: 0 auto;
-    }
+    img { width: 120px; }
   }
 
   .divider {
     height: 1px;
     width: 100%;
     background-color: color('gray');
-    margin: 1.6rem 0;
+    margin: 2.6rem 0;
   }
 }
 
 .company-contact {
+  // font-size: 2rem;
   font-style: normal;
   text-align: center;
 
   .company-name { margin-bottom: 1rem; }
 
-  p { margin-bottom: 0.3rem; }
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
 }
 
 .site-links {
@@ -51,12 +53,13 @@
     text-align: center;
   }
 
-  .social-media-nav {
-    margin: 1.7rem 0;
+}
 
-    li {
-      margin: 0 auto;
-    }
+.social-media-nav {
+  margin: 1.7rem 0;
+
+  li {
+    margin: 0 auto;
   }
 }
 
@@ -86,18 +89,75 @@
     padding: 0.5rem 0;
   }
 
-  @include respond-to('min-medium') {
+}
+
+@include respond-to('min-medium') {
+  .footer-info {
+    @include flex-space-between-children;
+    align-items: flex-start;
+
+    p { text-align: initial; }
+
+    .company-contact { flex: 1; }
+
+    .footer-links-hours {
+      flex: 2;
+
+      > div {
+        margin-bottom: 2.3rem;
+      }
+
+      > div:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .company-contact a {
+    display: block;
+    text-align: left;
+  }
+
+  .site-links ul {
+    @include flex-space-between-children;
+    margin: 0;
+
+    li { margin: 0; }
+
+    a {
+      padding: 0;
+
+      @include on-event {
+        background-color: initial;
+      }
+    }
+  }
+
+  .social-links {
+    @include flex-space-between-children;
+    
+    p { flex: 5; }
+
+    .social-media-nav {
+      flex: 7;
+      margin: 0;
+
+      li { margin: 0; }
+    }
+  }
+
+  .legal {
     .container {
       @include flex-space-between-children;  
     }
-
+  
     &-links { padding: 0; }
-
+  
     li {
       display: inline-block;
       margin: 0;
     }
-
+  
     a { padding: 0 1rem; }
   }
 }

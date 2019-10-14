@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 .social-media-nav ul {
-  display: flex;
+  @include flex-space-between-children;
   list-style-type: none;
 }
 
