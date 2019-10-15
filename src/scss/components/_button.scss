@@ -20,7 +20,7 @@ $btn-background: (
   'info': hsl(200, 50%, 45%)
 ) !default;
 
-/// evaluates button color (bg, font, border)
+/// evaluates button color (bg, border)
 /// @param {Color} $bgc - background color of the button
 @mixin button-color($bgc) {
   @include text-color-bgc($bgc);
@@ -83,6 +83,11 @@ $btn-background: (
 
   &-shadow {
     box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.19), 0 6px 6px hsla(0, 0%, 0%, 0.23);
+  }
+
+  &-submit {
+    font-weight: 700;
+    border-radius: 20px;
   }
 
   // Color schemes

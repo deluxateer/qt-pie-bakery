@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the contact page.
+// -----------------------------------------------------------------------------
+
+.contact body {
+  background-color: color('blue');
+}
+
+.contact main {
+  padding-right: 3rem;
+  padding-left: 3rem;
+
+  .container {
+    background-color: #fff;
+    padding: 2.7rem 3rem;
+    border-radius: 10px;
+  }
+}
+
+.contact .divider + p {
+  margin-bottom: 3rem;
+}

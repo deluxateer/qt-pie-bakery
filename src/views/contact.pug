@@ -1,0 +1,93 @@
+//- -----------------------------------------------------------------------------
+//- This file contains markup that is specific to the contact page.
+//- -----------------------------------------------------------------------------
+
+extend base-pages/base-default
+
+include components/form
+
+block localVariables
+  -
+    //- page-specific head configurations
+    const localHeadProps = {
+      title: 'Contact | QT Pie Bakery',
+      description: 'If you have any questions, comments, concerns, or any other inquires, please fill out the form below. Thanks for checking us out, and drop by sometime!',
+      keywords: 'baking, order, telephone, email, message',
+      //- paths of the stylesheets to use for this page
+      stylesheetPaths: [
+        'https://fonts.googleapis.com/css?family=Lato:400,700&display=swap',
+        'css/styles.min.css',
+      ],
+    };
+  -
+    //- paths of javascript files to use for this page
+    const scriptPaths = [
+      'js/bundle.js',
+    ];
+    
+    //- class to put on body tag for custom styling
+  - const pageName = 'contact';
+    //- used to indicate this page is selected on the navbar item
+  - const activeNavbarItem = 'Contact'
+
+  -
+    //- contact form data
+    const contactFormData = {
+      attributeData: {
+        class: ['contact-form'],
+      },
+      button: {
+        text: 'Submit',
+        attributeData: {
+          class: ['btn', 'btn-secondary', 'btn-submit'],
+          type: 'submit',
+        },
+      },
+      items: {
+        name: {
+          labelText: '<i class="fas fa-user"></i>Name',
+          tag: 'input',
+          attributeData: {
+            id: 'contact-name',
+            type: 'text',
+            name: 'name',
+            placeholder: 'Panini Crepes',
+            required: true,
+          },
+        },
+        email: {
+          labelText: '<i class="fas fa-envelope"></i>Email',
+          tag: 'input',
+          attributeData: {
+            id: 'contact-email',
+            type: 'email',
+            name: 'email',
+            placeholder: 'pcrepes@sweetmail.com',
+            required: true,
+          },
+        },
+        message: {
+          labelText: '<i class="fas fa-comment-alt"></i>Message',
+          tag: 'textarea',
+          attributeData: {
+            id: 'contact-message',
+            name: 'message',
+            rows: '7',
+            placeholder: 'Your message here...',
+            required: true,
+          },
+        },
+      },
+    }
+
+//- ---------------- MARKUP FOR PAGE ----------------
+
+prepend stylesheets
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
+
+block main
+  .container
+    h2 Give Us A Shout!
+    .divider
+    p If you have any questions, comments, concerns, or any other inquires, please fill out the form below. Thanks for checking us out, and drop by sometime!
+    +form(contactFormData)
