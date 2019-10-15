@@ -10,8 +10,8 @@
 /* stylelint-enable */
 
 $navbar-bgc: #fff;
-$nav-link-responsive-bg-color: color('blue', 'light');
-$nav-link-hover-bg-color: color('blue', 'light');
+$nav-link-responsive-bg-color: $primary-color-light;
+$nav-link-hover-bg-color: $primary-color-light;
 
 .mobile-nav-display {
   @include flex-space-between-children;

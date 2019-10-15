@@ -44,12 +44,14 @@ $violet: ('base': hsl(250, 53%, 41%)) !default;
 
 /********** SOCIAL MEDIA COLORS **********/
 
-$yelp: ('base': #d32323) !default;
-$instagram: ('base': radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #2859eb 90%)) !default;
-$facebook: ('base': #3b5998) !default;
-$pinterest: ('base': #e60023) !default;
+$social: (
+  'yelp': #d32323,
+  'instagram': radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #2859eb 90%),
+  'facebook': #3b5998,
+  'pinterest': #e60023
+) !default;
 
-/********** END MEDIA COLORS **********/
+/********** END SOCIAL MEDIA COLORS **********/
 
 $colors: (
   'gray': $gray,
@@ -62,10 +64,7 @@ $colors: (
   'green': $green,
   'blue': $blue,
   'violet': $violet,
-  'yelp': $yelp,
-  'instagram': $instagram,
-  'facebook': $facebook,
-  'pinterest': $pinterest
+  'social': $social
 ) !default;
 
 /// to avoid to repeating map-get($colors, ...)

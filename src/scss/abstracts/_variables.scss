@@ -11,17 +11,20 @@ $text-font-stack: 'Lato', system-ui !default;
 /// @type List
 $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
 
-/// Copy text color
-/// @type Color
-$text-color: color('blue', 'dark') !default;
-
 /// Primary (Brand) color
 /// @type Color
 $primary-color: color('blue') !default;
+$primary-color-light: color('blue', 'light') !default;
+$primary-color-dark: color('blue', 'dark') !default;
 
 /// Secondary (Accent) color
 /// @type Color
 $secondary-color: color('pink', 'dark') !default;
+$secondary-color-light: color('pink', 'base') !default;
+
+/// Copy text color
+/// @type Color
+$text-color: $primary-color-dark !default;
 
 /// Container's maximum width
 /// @type Length

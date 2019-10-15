@@ -90,7 +90,9 @@ const processScss = () => {
     postcssPresetEnv({
       autoprefixer: { grid: true },
     }),
-    cssnano(),
+    production ? cssnano() : cssnano({
+      preset: ['default', { normalizeWhitespace: false }],
+    }),
   ];
   return (
     src(scssSourcePath, { sourcemaps: !production })

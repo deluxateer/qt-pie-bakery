@@ -17,8 +17,8 @@
     padding: 0.75rem 1rem;
   }
 
-  .yelp { background: color('yelp'); }
-  .instagram { background: color('instagram'); }
-  .facebook { background: color('facebook'); }
-  .pinterest { background: color('pinterest'); }
+  .yelp { background: color('social', 'yelp'); }
+  .instagram { background: color('social', 'instagram'); }
+  .facebook { background: color('social', 'facebook'); }
+  .pinterest { background: color('social', 'pinterest'); }
 }
