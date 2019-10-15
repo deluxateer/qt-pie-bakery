@@ -5,3 +5,52 @@
 .catering-and-parties body {
   background-color: color('pink', 'light');
 }
+
+.catering-and-parties {
+  img {
+    width: 85%;
+    margin: 0 auto;
+    
+    @include respond-to('min-medium') {
+      width: 60%;
+    }
+  }
+
+  h3 { font-size: 1.8rem; }
+
+  main p { margin: 1.3rem 0; }
+}
+
+.venue-rental img {
+  margin-bottom: 3rem;
+}
+
+.catering img {
+  margin-top: 3rem;
+}
+
+.catering-info {
+  ul { list-style-position: inside; }
+
+  li + li { margin-top: 0.3rem; }
+}
+
+@include respond-to('min-large') {
+  .venue-rental,
+  .catering {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    img {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  .venue-info,
+  .catering img {
+    grid-column-end: 4;
+  }
+
+  .venue-rental { margin-bottom: 3rem; }
+}
