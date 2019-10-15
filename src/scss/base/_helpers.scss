@@ -22,6 +22,14 @@
   }
 }
 
+/// Styles for a simple divider
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: color('gray');
+  margin: 1rem 0 3rem;
+}
+
 /**
  * Hide text while making it readable for screen readers
  * 1. Needed in WebKit-based browsers because of an implementation bug;
