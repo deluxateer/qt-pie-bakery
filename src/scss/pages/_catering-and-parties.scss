@@ -7,7 +7,12 @@
 }
 
 .catering-and-parties {
-  img {
+
+  h3 { font-size: 1.8rem; }
+  
+  main p { margin: 1.3rem 0; }
+
+  main img {
     width: 85%;
     margin: 0 auto;
     
@@ -15,17 +20,14 @@
       width: 60%;
     }
   }
-
-  h3 { font-size: 1.8rem; }
-
-  main p { margin: 1.3rem 0; }
+  
 }
 
-.venue-rental img {
+main .venue-rental img {
   margin-bottom: 3rem;
 }
 
-.catering img {
+main .catering img {
   margin-top: 3rem;
 }
 
@@ -36,19 +38,20 @@
 }
 
 @include respond-to('min-large') {
+  .catering-and-parties main img {
+    width: 100%;
+    margin: 0;
+  }
+
   .venue-rental,
   .catering {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
-    img {
-      width: 100%;
-      margin: 0;
-    }
   }
 
   .venue-info,
   .catering img {
+    grid-column-start: 3;
     grid-column-end: 4;
   }
 
