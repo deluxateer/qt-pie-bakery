@@ -70,7 +70,6 @@ $colors-no-social: $colors;
   border: if($btn-border, 1px solid, none);
   border-radius: 0.15em;
   outline: none;
-  margin-bottom: 1em;
 }
 
 .#{$btn-name} {

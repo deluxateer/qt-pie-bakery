@@ -39,7 +39,14 @@ block localVariables
       button: {
         text: 'Submit',
         attributeData: {
-          class: ['btn', 'btn-secondary-light', 'btn-text-purple-base', 'btn-bold', 'btn-round'],
+          class: [
+            'btn',
+            'btn-secondary-light',
+            'btn-text-purple-base',
+            'btn-bold',
+            'btn-round',
+            'btn-large',
+            ],
           type: 'submit',
         },
       },
@@ -86,7 +93,7 @@ prepend stylesheets
   link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
 
 block main
-  .container
+  .container(data-animate)
     h2 Give Us A Shout!
     .divider
     p If you have any questions, comments, concerns, or any other inquires, please fill out the form below. Thanks for checking us out, and drop by sometime!

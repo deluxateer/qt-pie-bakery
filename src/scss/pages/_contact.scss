@@ -6,17 +6,61 @@
   background-color: color('blue');
 }
 
+.contact main::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: repeat image('circle-pattern.svg') center;
+  background-size: 50%;
+}
+
 .contact main {
-  padding-right: 3rem;
-  padding-left: 3rem;
+  position: relative;
+  padding-right: 1rem;
+  padding-left: 1rem;
 
   .container {
-    background-color: #fff;
+    @include animate(0, 0, 0, 0.6s);
+
+    background-color: hsla(0, 0%, 100%, 0.96);
     padding: 2.7rem 3rem;
     border-radius: 10px;
   }
 }
 
 .contact .divider + p {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form { display: grid; }
+
+@include respond-to('min-medium') {
+  .contact main {
+    padding-right: 3rem;
+    padding-left: 3rem;
+
+    .container { max-width: 1000px; }
+  }
+
+  .contact-form {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1em;
+    row-gap: 1em;
+
+    label { margin-bottom: 1.5rem; }
+
+    .form-message { grid-column: 1/-1; }
+
+    button {
+      grid-column: 2/3;
+      justify-self: end;
+      font-size: 1.5rem;
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
+  }
 }
