@@ -23,8 +23,10 @@ block localVariables
       'js/bundle.js',
     ];
     
+    //- class to put on body tag for custom styling
   - const pageName = 'about';
-  - const activeNavbarItem = 'about'
+    //- used to indicate this page is selected on the navbar item
+  - const activeNavbarItem = 'About'
 
 //- ---------------- MARKUP FOR PAGE ----------------
 
@@ -35,7 +37,7 @@ block main
   .container
     h2 About Us
     .divider
-    +image('cta/trays-of-baked-goods.jpg')
+    +image('cta/trays-of-baked-goods.jpg', 'Trays of baked goods')
     p In 1994, QT Pie Bakery opened on a quiet street corner in the heart of Pantown. From its inception, QT Pie Bakery has been cherished for its cute, bubbly-styled baked goods, decor and warm, inviting atmosphere.
     p We had a lot of grandiose ideas, but not a lot of money, and ultimately most of our furniture came from our own apartments (i.e. the tiny TV dinner table and big over sized green chair), to thrift shop finds, and friends have helped create that warm, cozy atmosphere that exists at QT Pie Bakery today.
     p We tried on several occasions to come up with clever names. In the end, it was a trip down to Pantown to look at a space on Sugar Rush Lane, which would end up being the home of QT Pie Bakery.

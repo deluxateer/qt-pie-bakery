@@ -1,0 +1,58 @@
+//- -----------------------------------------------------------------------------
+//- This file contains markup that is specific to the catering page.
+//- -----------------------------------------------------------------------------
+
+extend base-pages/base-default
+
+block localVariables
+  -
+    //- page-specific head configurations
+    const localHeadProps = {
+      title: 'Catering & Parties | QT Pie Bakery',
+      description: 'Whether your loved one needs a charming space for their birthday or baby shower, we are more than accommodating to meet your needs.',
+      keywords: 'catering, food, parties, party, desserts',
+      //- paths of the stylesheets to use for this page
+      stylesheetPaths: [
+        'https://fonts.googleapis.com/css?family=Lato&display=swap',
+        'css/styles.min.css',
+      ],
+    };
+  -
+    //- paths of javascript files to use for this page
+    const scriptPaths = [
+      'js/bundle.js',
+    ];
+    
+    //- class to put on body tag for custom styling
+  - const pageName = 'catering-and-parties';
+    //- used to indicate this page is selected on the navbar item
+  - const activeNavbarItem = 'Catering & Parties'
+
+//- ---------------- MARKUP FOR PAGE ----------------
+
+prepend stylesheets
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
+
+block main
+  .container
+    h2 Venue Rental &amp; Catering
+    .divider
+    .venue-rental
+      +image('venue.jpg', 'Venue display')
+      .venue-info
+        h3 Venue Rental
+        p Whether your loved one needs a charming space for their birthday or baby shower, we are more than accommodating to meet your needs. 
+        p $300 for 2 hours - Sunday Only
+    .catering
+      .catering-info
+        h3 Catering
+        p Orders are for at least two dozen of one chosen item and flavor. Please call for pricing and flavor options.
+        ul
+          li Macarons
+          li Cookies
+          li Cupcakes
+          li Brownies
+          li Pies
+          li Tarts
+          li Truffles
+      +image('coffee-cake.jpg', 'Coffee Cake')
