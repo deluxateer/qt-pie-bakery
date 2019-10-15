@@ -78,3 +78,16 @@
       + 'Please make sure it is defined in `$breakpoints` map.';
   }
 }
+
+/// Add rules to initialize an element for animation
+/// @author Deluxateer
+/// @param {Number} $x - x coordinate
+/// @param {Number} $y - y coordinate
+/// @param {Number} $z - z coordinate
+/// @param {Number} $duration - time duration for animation
+@mixin animate($x, $y: 0, $z: 0, $duration: 0.9s) {
+  transform: translate3d($x, $y, $z);
+  transition: transform $duration, visibility $duration, opacity $duration;
+  visibility: hidden;
+  opacity: 0;
+}

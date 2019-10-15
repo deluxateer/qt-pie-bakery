@@ -55,5 +55,21 @@ main .catering img {
     grid-column-end: 4;
   }
 
+  .venue-rental img {
+    @include animate(0, 230px);
+  }
+
+  .venue-info {
+    @include animate(230px);
+  }
+
+  .catering img {
+    @include animate(0, 230px);
+  }
+
+  .catering-info {
+    @include animate(-230px);
+  }
+
   .venue-rental { margin-bottom: 3rem; }
 }

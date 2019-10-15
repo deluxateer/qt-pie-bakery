@@ -8,7 +8,10 @@
 //- @param {String} activeNavbarItem - navbar item that is currently active
 mixin navbar-items(text, url, activeNavbarItem)
   li
-    a.nav-link(href=url, class=(activeNavbarItem && text.toLowerCase() === activeNavbarItem.toLowerCase()) ? 'nav-link-active' : null)= text
+    if activeNavbarItem && text.toLowerCase() === activeNavbarItem.toLowerCase()
+      span.nav-link.nav-link-active= text
+    else
+      a.nav-link(href=url)= text
 
 //- Generates a generic navbar with hamburger menu and brand logo on mobile
 //- @param {Object} navbarItems - links to use for the navbar, excluding the logo
@@ -17,7 +20,7 @@ mixin navbar(navbarItems, activeNavbarItem)
   nav.navbar
     .mobile-nav-display
       a.brand-logo(href='/')
-        +image('logo.png', 'Logo', false)
+        +image('logo.png', 'Logo', false, false)
       button.navbar-toggle
         i.fas.fa-bars
     ul.navbar-submenu

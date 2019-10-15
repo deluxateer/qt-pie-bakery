@@ -38,13 +38,13 @@ block main
     h2 Venue Rental &amp; Catering
     .divider
     .venue-rental
-      +image('venue.jpg', 'Venue display')
-      .venue-info
+      +image('venue.jpg', 'Venue Display', true)
+      .venue-info(data-animate)
         h3 Venue Rental
         p Whether your loved one needs a charming space for their birthday or baby shower, we are more than accommodating to meet your needs. 
         p $300 for 2 hours - Sunday Only
     .catering
-      .catering-info
+      .catering-info(data-animate)
         h3 Catering
         p Orders are for at least two dozen of one chosen item and flavor. Please call for pricing and flavor options.
         ul
@@ -55,4 +55,4 @@ block main
           li Pies
           li Tarts
           li Truffles
-      +image('coffee-cake.jpg', 'Coffee Cake')
+      +image('coffee-cake.jpg', 'Coffee Cake', true)
