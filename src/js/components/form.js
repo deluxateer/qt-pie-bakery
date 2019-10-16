@@ -6,7 +6,7 @@ if (form) {
   confirmEl.innerText = confirmMsg;
   confirmEl.style.cssText = 'transition: all 0.5s; opacity: 0; visibility: 0; background-color: hsl(72, 91%, 56%); padding: 1rem; border-radius: 20px; margin-bottom: 1rem;';
   
-  (form.parentNode).insertBefore(confirmEl, form);
+  (form.parentNode).insertBefore(confirmEl, form.nextSibling);
   
   form.addEventListener('submit', e => {
     e.preventDefault();

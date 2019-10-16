@@ -62,6 +62,7 @@ $nav-link-hover-bg-color: $primary-color-light;
     transform: translateY(0);
     visibility: visible;
     opacity: 1;
+    z-index: 5;
   }
 
   li { text-align: center; }

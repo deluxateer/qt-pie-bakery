@@ -33,10 +33,17 @@
 }
 
 .contact .divider + p {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
-.contact-form { display: grid; }
+.contact-form {
+  display: grid;
+
+  input,
+  textarea { font-size: 1rem; }
+
+  button { margin-bottom: 2rem; }
+}
 
 @include respond-to('min-medium') {
   .contact main {

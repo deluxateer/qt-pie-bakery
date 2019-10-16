@@ -121,7 +121,8 @@
 
     li { margin: 0; }
 
-    a {
+    a,
+    span {
       padding: 0;
 
       @include on-event {
