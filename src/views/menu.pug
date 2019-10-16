@@ -28,6 +28,24 @@ block localVariables
     //- used to indicate this page is selected on the navbar item
   - const activeNavbarItem = 'Menu'
 
+mixin buildMenuItems(menuItem)
+  - const { itemName, price, description } = menuItem
+  .menu-item
+    .item-info
+      h4.item-name= itemName
+      span.price= `$${price.toFixed(2)}`
+    p.item-description= description
+
+mixin buildMenu(menuGroupData)
+  each menuGroupInfo, groupName in menuGroupData
+    .menu-group(class=groupName.toLowerCase())
+      h3= groupName
+        if menuGroupInfo.extraInfo
+          .extra-info= ` ${menuGroupInfo.extraInfo}`
+      .menu-group-items
+        each menuItem in menuGroupInfo.items
+          +buildMenuItems(menuItem)
+
 //- ---------------- MARKUP FOR PAGE ----------------
 
 prepend stylesheets
@@ -37,38 +55,39 @@ block main
   .container
     h2 Menu
     .divider
-    .menu-group.cookies
-      h3 Cookies
-      .menu-group-items
-        .menu-item
-          .item-info
-            h4.item-name Classic
-            span.price $3.00
-          p.item-description Chocolate, Strawberry, Sugar
-        .menu-item
-          .item-info
-            h4.item-name Chocolate Chip
-            span.price $3.25
-        .menu-item
-          .item-info
-            h4.item-name White Chocolate Macadamia
-            span.price $4.75
-        .menu-item
-          .item-info
-            h4.item-name Macarons
-            span.price $1.00
-          p.item-description.
-            Chocolate, Vanilla, Strawberry,Sweet Potato, Cherry, Matcha
-        .menu-item
-          .item-info
-            h4.item-name Sea Salt Caramel
-            span.price $3.50
-          p.item-description.
-            a chocolate chunk cookie topped with sea salt and homemade caramel candy
-        .menu-item
-          .item-info
-            h4.item-name Double Chocolate Pecan
-            span.price $3.50
-    .menu-group
-      h3 Cupcakes
-    .menu-group
+    +buildMenu(menuGroupData)
+    //- .menu-group.cookies
+    //-   h3 Cookies
+    //-   .menu-group-items
+    //-     .menu-item
+    //-       .item-info
+    //-         h4.item-name Classic
+    //-         span.price $3.00
+    //-       p.item-description Chocolate, Strawberry, Sugar
+    //-     .menu-item
+    //-       .item-info
+    //-         h4.item-name Chocolate Chip
+    //-         span.price $3.25
+    //-     .menu-item
+    //-       .item-info
+    //-         h4.item-name White Chocolate Macadamia
+    //-         span.price $4.75
+    //-     .menu-item
+    //-       .item-info
+    //-         h4.item-name Macarons
+    //-         span.price $1.00
+    //-       p.item-description.
+    //-         Chocolate, Vanilla, Strawberry,Sweet Potato, Cherry, Matcha
+    //-     .menu-item
+    //-       .item-info
+    //-         h4.item-name Sea Salt Caramel
+    //-         span.price $3.50
+    //-       p.item-description.
+    //-         a chocolate chunk cookie topped with sea salt and homemade caramel candy
+    //-     .menu-item
+    //-       .item-info
+    //-         h4.item-name Double Chocolate Pecan
+    //-         span.price $3.50
+    //- .menu-group
+    //-   h3 Cupcakes
+    //- .menu-group
