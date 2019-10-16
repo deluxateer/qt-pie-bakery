@@ -1,0 +1,65 @@
+//- -----------------------------------------------------------------------------
+//- This file contains all application-wide hard coded data
+//- to be used in the pug files. The idea is to extract them
+//- all into here to enforce decoupling and make maintainence
+//- easier.
+//- -----------------------------------------------------------------------------
+
+
+//- ---------------- Contact Page Data ---------------- -//
+-
+  //- contact form data
+  const contactFormData = {
+    attributeData: {
+      class: ['contact-form'],
+    },
+    button: {
+      text: 'Submit',
+      attributeData: {
+        class: [
+          'btn',
+          'btn-secondary-light',
+          'btn-text-purple-base',
+          'btn-bold',
+          'btn-round',
+          'btn-large',
+          ],
+        type: 'submit',
+      },
+    },
+    items: {
+      name: {
+        labelText: '<i class="fas fa-user"></i>Name',
+        tag: 'input',
+        attributeData: {
+          id: 'contact-name',
+          type: 'text',
+          name: 'name',
+          placeholder: 'Panini Crepes',
+          required: true,
+        },
+      },
+      email: {
+        labelText: '<i class="fas fa-envelope"></i>Email',
+        tag: 'input',
+        attributeData: {
+          id: 'contact-email',
+          type: 'email',
+          name: 'email',
+          placeholder: 'pcrepes@sweetmail.com',
+          required: true,
+        },
+      },
+      message: {
+        labelText: '<i class="fas fa-comment-alt"></i>Message',
+        tag: 'textarea',
+        attributeData: {
+          id: 'contact-message',
+          name: 'message',
+          rows: '7',
+          placeholder: 'Your message here...',
+          required: true,
+        },
+      },
+    },
+  }

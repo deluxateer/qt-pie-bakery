@@ -1,0 +1,68 @@
+//- -----------------------------------------------------------------------------
+//- This file contains markup that is specific to the menu page.
+//- -----------------------------------------------------------------------------
+
+extend base-pages/base-default
+
+block localVariables
+  -
+    //- page-specific head configurations
+    const localHeadProps = {
+      title: 'Menu | QT Pie Bakery',
+      description: 'The menu of available foods you can get at QT Pie Bakery. An assortment of baked goods and sweets are ready to be devoured!',
+      keywords: 'cookies, cupcakes, cakes, pies, brownies, truffles, tortes, tarts, creme brulee, crepes',
+      //- paths of the stylesheets to use for this page
+      stylesheetPaths: [
+        'https://fonts.googleapis.com/css?family=Lato:400&display=swap',
+        'css/styles.min.css',
+      ],
+    };
+  -
+    //- paths of javascript files to use for this page
+    const scriptPaths = [
+      'js/bundle.js',
+    ];
+    
+    //- class to put on body tag for custom styling
+  - const pageName = 'menu';
+    //- used to indicate this page is selected on the navbar item
+  - const activeNavbarItem = 'Menu'
+
+//- ---------------- MARKUP FOR PAGE ----------------
+
+prepend stylesheets
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
+
+block main
+  .container
+    h2 Menu
+    .divider
+    .menu-group
+      h3 Cookies
+      .menu-group-items
+        .menu-item
+          h4.item-name Classic
+          span.price $3.00
+          p.item-description Chocolate, Strawberry, Sugar
+        .menu-item
+          h4.item-name Chocolate Chip
+          span.price $3.25
+        .menu-item
+          h4.item-name White Chocolate Macadamia
+          span.price $4.75
+        .menu-item
+          h4.item-name Macarons
+          span.price $1.00
+          p.item-description.
+            Chocolate, Vanilla, Strawberry,Sweet Potato, Cherry, Matcha
+        .menu-item
+          h4.item-name Sea Salt Caramel
+          span.price $3.50
+          p.item-description.
+            a chocolate chunk cookie topped with sea salt and homemade caramel candy
+        .menu-item
+          h4.item-name Double Chocolate Pecan
+          span.price $3.50
+    .menu-group
+      h3 Cupcakes
+    .menu-group
