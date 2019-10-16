@@ -52,42 +52,7 @@ prepend stylesheets
   link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
 
 block main
-  .container
+  .container(data-animate)
     h2 Menu
     .divider
     +buildMenu(menuGroupData)
-    //- .menu-group.cookies
-    //-   h3 Cookies
-    //-   .menu-group-items
-    //-     .menu-item
-    //-       .item-info
-    //-         h4.item-name Classic
-    //-         span.price $3.00
-    //-       p.item-description Chocolate, Strawberry, Sugar
-    //-     .menu-item
-    //-       .item-info
-    //-         h4.item-name Chocolate Chip
-    //-         span.price $3.25
-    //-     .menu-item
-    //-       .item-info
-    //-         h4.item-name White Chocolate Macadamia
-    //-         span.price $4.75
-    //-     .menu-item
-    //-       .item-info
-    //-         h4.item-name Macarons
-    //-         span.price $1.00
-    //-       p.item-description.
-    //-         Chocolate, Vanilla, Strawberry,Sweet Potato, Cherry, Matcha
-    //-     .menu-item
-    //-       .item-info
-    //-         h4.item-name Sea Salt Caramel
-    //-         span.price $3.50
-    //-       p.item-description.
-    //-         a chocolate chunk cookie topped with sea salt and homemade caramel candy
-    //-     .menu-item
-    //-       .item-info
-    //-         h4.item-name Double Chocolate Pecan
-    //-         span.price $3.50
-    //- .menu-group
-    //-   h3 Cupcakes
-    //- .menu-group
