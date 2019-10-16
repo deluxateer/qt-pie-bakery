@@ -5,10 +5,242 @@
 //- easier.
 //- -----------------------------------------------------------------------------
 
+//- ---------------- Menu Page Data ---------------- -//
+-
+  menuGroupData = {
+    Cookies: {
+      items: [
+        {
+          itemName: 'Classic',
+          price: 3.00,
+          description: 'Chocolate, Strawberry, Sugar',
+        },
+        {
+          itemName: 'Chocolate Chip',
+          price: 3.25,
+        },
+        {
+          itemName: 'White Chocolate Macadamia',
+          price: 4.75,
+        },
+        {
+          itemName: 'Macarons',
+          price: 1.00,
+          description: 'Chocolate, Vanilla, Strawberry, Sweet Potato, Cherry, Matcha',
+        },
+        {
+          itemName: 'Sea Salt Caramel',
+          price: 3.50,
+          description: 'a chocolate chunk cookie topped with sea salt and homemade caramel candy',
+        },
+        {
+          itemName: 'Double Chocolate Pecan',
+          price: 3.50,
+        },
+      ],
+    },
+    Cupcakes: {
+      items: [
+        {
+          itemName: 'Classic',
+          price: 4.00,
+          description: 'Chocolate, Vanilla, Strawberry, Red Velvet',
+        },
+        {
+          itemName: 'Black & White',
+          price: 4.25,
+          description: 'chocolate cake with chocolate buttercream and whipped vanilla icing',
+        },
+        {
+          itemName: 'Banana',
+          price: 4.50,
+          description: 'caramel filling with caramel meringue buttercream - also available with chocolate buttercream (no filling)',
+        },
+        {
+          itemName: 'Caramel',
+          price: 4.75,
+          description: 'caramel meringue buttercream with a caramel drizzle',
+        },
+        {
+          itemName: 'Carrot',
+          price: 4.50,
+          description: 'cream cheese icing topped with walnuts',
+        },
+        {
+          itemName: 'German Chocolate',
+          price: 4.25,
+          description: 'coconut caramel pecan topping',
+        },
+        {
+          itemName: 'Lemon',
+          price: 5.00,
+          description: 'delicate lemon cake filled with tart lemon cream and topped with lemon meringue buttercream',
+        },
+        {
+          itemName: 'Coconut',
+          price: 4.50,
+        },
+      ],
+    },
+    Cakes: {
+      items: [
+        {
+          itemName: 'Classic',
+          price: 40.00,
+          description: 'Chocolate, Vanilla, Strawberry, Red Velvet',
+        },
+        {
+          itemName: 'Black & White',
+          price: 45.00,
+          description: 'chocolate cake with chocolate buttercream and whipped vanilla icing',
+        },
+        {
+          itemName: 'Banana',
+          price: 45.00,
+          description: 'caramel filling with caramel meringue buttercream - also available with chocolate buttercream (no filling)',
+        },
+        {
+          itemName: 'Caramel',
+          price: 45.00,
+          description: 'caramel meringue buttercream with a caramel drizzle',
+        },
+        {
+          itemName: 'Carrot',
+          price: 45.00,
+          description: 'cream cheese icing topped with walnuts',
+        },
+        {
+          itemName: 'German Chocolate',
+          price: 45.00,
+          description: 'coconut caramel pecan topping',
+        },
+        {
+          itemName: 'Lemon',
+          price: 45.00,
+          description: 'delicate lemon cake filled with tart lemon cream and topped with lemon meringue buttercream',
+        },
+        {
+          itemName: 'Coffee',
+          price: 40.00,
+        },
+      ],
+    },
+    Pies: {
+      items: [
+        {
+          itemName: 'Apple',
+          price: 25.00,
+        },
+        {
+          itemName: 'Pecan',
+          price: 32.00,
+        },
+        {
+          itemName: 'Pomogranate',
+          price: 40.00,
+        },
+        {
+          itemName: 'Blueberry',
+          price: 30.00,
+        },
+        {
+          itemName: 'Cherry',
+          price: 30.00,
+        },
+        {
+          itemName: 'Lemon',
+          price: 28.00,
+        },
+      ],
+    },
+    Brownies: {
+      extraInfo: '(+$2.00 for Ice Cream scoop)',
+      items: [
+        {
+          itemName: 'Classic',
+          price: 3.50,
+          description: 'Milk Chocolate flaky exterior with a soft, moist interior',
+        },
+        {
+          itemName: 'Double Fudge',
+          price: 4.50,
+          description: 'Brownie coated with hot fudge',
+        },
+        {
+          itemName: 'Marble Cream Cheese',
+          price: 5.00,
+        },
+        {
+          itemName: 'Chocolate Chuck Toffee',
+          price: 5.00,
+        },
+      ],
+    },
+    Truffles: {
+      items: [
+        {
+          itemName: 'Chocolate',
+          price: 1.25,
+        },
+        {
+          itemName: 'Cherry',
+          price: 1.50,
+        },
+        {
+          itemName: 'Matcha',
+          price: 1.75,
+        },
+        {
+          itemName: 'German Chocolate',
+          price: 1.75,
+        },
+        {
+          itemName: 'Strawberry',
+          price: 1.50,
+        },
+        {
+          itemName: 'Almond',
+          price: 1.50,
+        },
+        {
+          itemName: 'Lemon',
+          price: 1.25,
+        },
+        {
+          itemName: 'Hazelnut',
+          price: 1.50,
+        },
+      ],
+    },
+    Specialty: {
+      items: [
+        {
+          itemName: 'Crepes',
+          price: 9.00,
+          description: `Chocolate, Vanilla, Strawberry, Cinnammon
+          Amount: 7 Sheets`,
+        },
+        {
+          itemName: 'Tarts',
+          price: 8.50,
+          description: 'Assorted blueberries, strawberries, oranges, and raspberries on a flaky base',
+        },
+        {
+          itemName: 'Crème Burlee',
+          price: 6.00,
+          description: 'Baked vanilla custard topped with sugar and fresh fruit.',
+        },
+        {
+          itemName: 'Tortes',
+          price: 45.00,
+          description: 'Chocolate, Strawberry, Cherry, German Chocolate, Red Velvet',
+        },
+      ],
+    },
+  }
 
 //- ---------------- Contact Page Data ---------------- -//
 -
-  //- contact form data
   const contactFormData = {
     attributeData: {
       class: ['contact-form'],
