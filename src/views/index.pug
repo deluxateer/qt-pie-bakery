@@ -36,6 +36,7 @@ prepend stylesheets
   link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
 
 block main
+  //- ---------------- Hero Section ---------------- -//
   section.hero
     .container
       .hero-img
@@ -47,6 +48,40 @@ block main
           a.cta.btn.btn-secondary.btn-large.btn-round(href='tel:1-111-111-1111') Call And Order
             .phone-number +1 (111) 111-1111
         p.opening-hours Opening Hours: <b>Mon-Fri:</b> 9am - 9pm / <b>Weekend:</b> 9am - 10pm
-  section.dank.btn-green-base(style='position:relative;')
+  //- ---------------- Photo Preview Section ---------------- -//
+  section.photo-preview
+    .preview-info
+      h2 Our Beautiful Lovelies!
+      p Just a taste of what we have in store, for you
     .container
-      h1 test
+      .instagram-logo
+        a(href=socialMediaItems.instagram.url)
+          +image('instagram-logo.png', 'Instagram Logo')
+      .preview-gallery
+        .preview-item
+          .shape-circle.shape-lime
+          +image('insta-pics/cheesecake.jpg', 'Cheesecake')
+        .preview-item
+          .shape-diamond.shape-orange-dark
+          +image('insta-pics/brownie.jpg', 'Brownie')
+        .preview-item
+          .shape-hexagon.shape-blue-base
+          +image('insta-pics/chocolate-chip-cookies.jpg', 'Chocolate Chip Cookies')
+        .preview-item
+          .shape-hexagon.shape-pink-dark
+          +image('insta-pics/creme-brulee2.jpg', 'Creme Burlee')
+        .preview-item
+          .shape-circle.shape-violet-base
+          +image('insta-pics/cake.jpg', 'Cake')
+        .preview-item
+          .shape-diamond.shape-red-base
+          +image('insta-pics/tart3.jpg', 'Tart')
+      p ...and yes, we have pie.
+      .pie-gallery
+        .preview-item
+          +image('insta-pics/pie1.jpg', 'Pie')
+        .preview-item
+          +image('insta-pics/pecan-pie.jpg', 'Pecan Pie')
+        .preview-item
+          +image('insta-pics/apple-pie.jpg', 'Apple Pie')
+

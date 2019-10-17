@@ -23,6 +23,7 @@ $nav-link-hover-bg-color: $primary-color-light;
 
 .brand-logo img {
   width: 80px;
+  border-radius: 0;
 
   @include respond-to('min-medium') {
     width: 120px;
@@ -76,7 +77,7 @@ $nav-link-hover-bg-color: $primary-color-light;
   font-size: 1.4rem;
   background-color: $nav-link-responsive-bg-color;
   padding: 10px;
-  border-radius: 12px;
+  border-radius: 20px;
 
   &-active {
     color: color('gray');
