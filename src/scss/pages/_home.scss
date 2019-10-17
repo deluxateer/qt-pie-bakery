@@ -11,6 +11,8 @@
 
 .home main { padding: 0; }
 
+.home .navbar { z-index: 2; }
+
 .home .navbar,
 .home .navbar-toggle {
   color: #fff;
@@ -75,6 +77,20 @@
   }
 
   @include respond-to('min-medium') {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -38vw;
+      left: -56vw;
+      z-index: 0;
+      height: 100vw;
+      width: 100vw;
+      background-color: $secondary-color;
+      border-radius: 50%;
+    }
+
     .container {
       display: flex;
       justify-content: space-between;
@@ -98,8 +114,6 @@
   
   @include respond-to('min-large') {
     padding-bottom: 4rem;
-
-    .container { padding: 0; }
     
     .hero-content .opening-hours {
       text-align: right;
