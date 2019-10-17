@@ -40,6 +40,10 @@ $colors-no-social: $colors;
 @mixin button-color($bgc) {
   @include text-color-bgc($bgc);
 
+  @if $btn-border != false {
+    border-color: call(get-function(nth($btn-border, 1)), $bgc, nth($btn-border, 2));
+  }
+
   &:hover,
   &:focus {
     color: contrast-text($bgc);
@@ -49,10 +53,6 @@ $colors-no-social: $colors;
   &:active {
     background: call(get-function(shade), $bgc, nth($btn-hover, 2));
     box-shadow: none;
-  }
-
-  @if $btn-border != false {
-    border-color: call(get-function(nth($btn-border, 1)), $bgc, nth($btn-border, 2));
   }
 }
 
@@ -74,6 +74,25 @@ $colors-no-social: $colors;
 
 .#{$btn-name} {
   @extend %#{btn-name};
+
+  // button background-color schemes
+  @each $key, $value in $btn-colors {
+    &-#{$key} {
+      @include button-color($value);
+    }
+  }
+
+  // button text-color schemes
+  @each $key, $value in $btn-colors {
+    &-text-#{$key} {
+      color: $value;
+
+      &:hover,
+      &:focus {
+        color: $value;
+      }
+    }
+  }
 
   // Modifiers
   &-large {
@@ -99,25 +118,6 @@ $colors-no-social: $colors;
 
   &-shadow {
     box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.19), 0 6px 6px hsla(0, 0%, 0%, 0.23);
-  }
-
-  // button background-color schemes
-  @each $key, $value in $btn-colors {
-    &-#{$key} {
-      @include button-color($value);
-    }
-  }
-
-  // button text-color schemes
-  @each $key, $value in $btn-colors {
-    &-text-#{$key} {
-      color: $value;
-
-      &:hover,
-      &:focus {
-        color: $value;
-      }
-    }
   }
 }
 

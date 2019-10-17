@@ -59,23 +59,27 @@ block main
           +image('instagram-logo.png', 'Instagram Logo')
       .preview-gallery
         .preview-item
-          .shape-circle.shape-lime
-          +image('insta-pics/cheesecake.jpg', 'Cheesecake')
+          //- .shape-circle.shape-green-lime
+          //- .preview-pattern
+          +image('patterns/circle-green-lime.svg')
+          +image('insta-pics/cheesecake.jpg', 'Cheesecake', true)
         .preview-item
-          .shape-diamond.shape-orange-dark
-          +image('insta-pics/brownie.jpg', 'Brownie')
+          //- .shape-diamond.shape-orange-dark
+          //- .preview-pattern
+          +image('patterns/diamond-orange-dark.svg')
+          +image('insta-pics/brownie.jpg', 'Brownie', true)
         .preview-item
-          .shape-hexagon.shape-blue-base
-          +image('insta-pics/chocolate-chip-cookies.jpg', 'Chocolate Chip Cookies')
+          +image('patterns/hexagon-blue-base.svg')
+          +image('insta-pics/chocolate-chip-cookies.jpg', 'Chocolate Chip Cookies', true)
         .preview-item
-          .shape-hexagon.shape-pink-dark
-          +image('insta-pics/creme-brulee2.jpg', 'Creme Burlee')
+          +image('patterns/hexagon-pink-dark.svg')
+          +image('insta-pics/creme-brulee2.jpg', 'Creme Burlee', true)
         .preview-item
-          .shape-circle.shape-violet-base
-          +image('insta-pics/cake.jpg', 'Cake')
+          +image('patterns/circle-violet-base.svg')
+          +image('insta-pics/cake.jpg', 'Cake', true)
         .preview-item
-          .shape-diamond.shape-red-base
-          +image('insta-pics/tart3.jpg', 'Tart')
+          +image('patterns/diamond-red-base.svg')
+          +image('insta-pics/tart3.jpg', 'Tart', true)
       p ...and yes, we have pie.
       .pie-gallery
         .preview-item
@@ -84,4 +88,3 @@ block main
           +image('insta-pics/pecan-pie.jpg', 'Pecan Pie')
         .preview-item
           +image('insta-pics/apple-pie.jpg', 'Apple Pie')
-

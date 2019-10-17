@@ -160,7 +160,7 @@
 
     > p {
       text-align: center;
-      margin: 2rem 0;
+      margin: 4rem 0;
     }
   }
 }
@@ -187,8 +187,35 @@
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2.2rem;
-  column-gap: 1rem;
+  column-gap: 2.2rem;
 
   img { width: 100%; }
 }
 
+.preview-gallery .preview-item {
+  position: relative;
+
+  img:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 85%;
+    margin: auto;
+  }
+}
+
+@media (min-width: '500px') {
+  .preview-gallery,
+  .pie-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include respond-to('min-medium') {
+  .preview-gallery,
+  .pie-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
