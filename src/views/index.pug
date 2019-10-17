@@ -35,6 +35,16 @@ block localVariables
 prepend stylesheets
   link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
 
+mixin buildPreviewGallery(previewGalleryData)
+  each itemSet in previewGalleryData
+    .preview-item
+      if itemSet.shape
+        +image(itemSet.shape.url, null, true)
+      if itemSet.image
+        +image(itemSet.image.url, itemSet.image.alt, true)
+      else
+        - throw 'You must at least have an image for this set'
+
 block main
   //- ---------------- Hero Section ---------------- -//
   section.hero
@@ -58,33 +68,13 @@ block main
         a(href=socialMediaItems.instagram.url)
           +image('instagram-logo.png', 'Instagram Logo')
       .preview-gallery
-        .preview-item
-          //- .shape-circle.shape-green-lime
-          //- .preview-pattern
-          +image('patterns/circle-green-lime.svg')
-          +image('insta-pics/cheesecake.jpg', 'Cheesecake', true)
-        .preview-item
-          //- .shape-diamond.shape-orange-dark
-          //- .preview-pattern
-          +image('patterns/diamond-orange-dark.svg')
-          +image('insta-pics/brownie.jpg', 'Brownie', true)
-        .preview-item
-          +image('patterns/hexagon-blue-base.svg')
-          +image('insta-pics/chocolate-chip-cookies.jpg', 'Chocolate Chip Cookies', true)
-        .preview-item
-          +image('patterns/hexagon-pink-dark.svg')
-          +image('insta-pics/creme-brulee2.jpg', 'Creme Burlee', true)
-        .preview-item
-          +image('patterns/circle-violet-base.svg')
-          +image('insta-pics/cake.jpg', 'Cake', true)
-        .preview-item
-          +image('patterns/diamond-red-base.svg')
-          +image('insta-pics/tart3.jpg', 'Tart', true)
+        +buildPreviewGallery(previewShapeGallery)
       p ...and yes, we have pie.
       .pie-gallery
-        .preview-item
-          +image('insta-pics/pie1.jpg', 'Pie')
-        .preview-item
-          +image('insta-pics/pecan-pie.jpg', 'Pecan Pie')
-        .preview-item
-          +image('insta-pics/apple-pie.jpg', 'Apple Pie')
+        +buildPreviewGallery(previewPieGallery)
+  //- ---------------- Photo Preview Section ---------------- -//
+  section.yelp-review
+    //- heartimage
+    h2 We Love Our Customers!
+    .container
+      .yelp-testimony-group
