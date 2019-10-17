@@ -20,7 +20,10 @@ mixin navbar(navbarItems, activeNavbarItem)
   nav.navbar
     .mobile-nav-display
       a.brand-logo(href='/')
-        +image('logo.png', 'Logo', false, false)
+        if isHomePage
+          +image('logo-white.png', 'Logo', false, false)
+        else
+          +image('logo.png', 'Logo', false, false)
       button.navbar-toggle
         i.fas.fa-bars
     ul.navbar-submenu

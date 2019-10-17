@@ -3,9 +3,107 @@
 // -----------------------------------------------------------------------------
 
 .home body {
-  @include flex-center-children;
-  background-color: adjust-color($primary-color, $saturation: -30%, $lightness: 62%);
-  padding: 20px;
+  @include text-color-bgc($primary-color, #000, #fff, 70);
 
-  p { margin-bottom: 0.5rem; }
+  h1,
+  h2 { font-family: 'Courgette', cursive; }
+}
+
+.home main { padding: 0; }
+
+.home .navbar,
+.home .navbar-toggle {
+  color: #fff;
+  background-color: transparent;
+}
+
+@include respond-to('min-large') {
+  .home .navbar-submenu {
+    background-color: transparent;
+
+    a {
+      color: #fff;
+      background-color: transparent;
+    
+      @include on-event {
+        color: $primary-color;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.hero {
+  @include text-color-bgc($primary-color, #000, #fff, 70);
+  
+  padding: 2rem 0 3rem;
+
+  .hero-img {
+    display: none;
+
+    img {
+      max-height: 400px;
+    }
+  }
+
+  .hero-content {
+    text-align: center;
+
+    h1 { font-size: 2.8rem; }
+
+    p {
+      font-size: 1.5rem;
+      margin: 2.7rem 0;
+    }
+
+    .opening-hours {
+      font-size: 0.8rem;
+    }
+  }
+
+  .cta {
+    display: block;
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0 auto;
+
+    .phone-number {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-top: 0.7rem;
+    }
+  }
+
+  @include respond-to('min-medium') {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    .hero-img {
+      display: block;
+      flex: 1;
+    }
+
+    .hero-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+  }
+  
+  @include respond-to('min-large') {
+    padding-bottom: 4rem;
+
+    .container { padding: 0; }
+    
+    .hero-content .opening-hours {
+      text-align: right;
+      margin: 0;
+    }
+  }
 }

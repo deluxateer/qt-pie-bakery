@@ -2,17 +2,17 @@
 //- This file contains markup that is specific to the landing page.
 //- -----------------------------------------------------------------------------
 
-extend base-pages/base-full-page
+extend base-pages/base-default
 
-include components/card
+include components/button
 
 block localVariables
   -
     //- page-specific head configurations
     const localHeadProps = {
-      title: 'Delux Toolkit by Deluxateer',
-      description: 'Landing page of the delux toolkit.',
-      keywords: 'webdev, pug, scss, sass, js, deluxateer',
+      title: 'QT Pie Bakery',
+      description: 'Bring your sweet tooth! Pie, cakes, anything baked and sweet. We have it all here.',
+      keywords: 'cookies, cakes, pies, goods, pantown, local, cutie',
       //- paths of the stylesheets to use for this page
       stylesheetPaths: [
         'https://fonts.googleapis.com/css?family=Courgette|Lato:400,400i,700&display=swap',
@@ -24,22 +24,26 @@ block localVariables
     const scriptPaths = [
       'js/bundle.js',
     ];
-  -
-    const pageName = 'home';
-  -
-    const cardContent = {
-      iconClasses: 'fas fa-check-circle fa-5x',
-      title: "You're good to go!",
-      content: [
-        'Your toolkit is working just fine now.',
-        'Enjoy!',
-      ],
-    }
+    
+    //- class to put on body tag for custom styling
+  - const pageName = 'home';
+    //- used to indicate this page is selected on the navbar item
+  - const isHomePage = true;
 
 //- ---------------- MARKUP FOR PAGE ----------------
 
 prepend stylesheets
   link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
 
-block content
-  +card(cardContent)
+block main
+  section.hero
+    .container
+      .hero-img
+        +image('hero/macarons.jpg', 'Macarons', true, false)
+      .hero-content
+        .hero-info
+          h1 Bring your sweet tooth
+          p Pie, cakes, anything baked and sweet. We have it all here.
+          a(href='tel:1-111-111-1111').cta.btn.btn-secondary.btn-large.btn-round Call And Order
+            .phone-number +1 (111) 111-1111
+        p.opening-hours Opening Hours: <b>Mon-Fri:</b> 9am - 9pm / <b>Weekend:</b> 9am - 10pm
