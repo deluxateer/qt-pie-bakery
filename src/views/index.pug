@@ -78,3 +78,12 @@ block main
     h2 We Love Our Customers!
     .container
       .yelp-testimony-group
+        .yelp-testimony
+          +image('people/donna-p.jpg', 'Donna P.')
+          .yelp-testimony-content
+            a.yelp-link(href='http://yelp.com', target='_blank')
+              i.fab.fa-yelp
+            blockquote.yelp-testimony-text(cite='https://yelp.com')
+              p "Muffin dragée icing tart. Gingerbread macaroon cookie."
+              footer Donna P.
+                div 10/24/19
