@@ -243,15 +243,6 @@
   column-gap: 2.5rem;
 }
 
-// .yelp-review {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-//   column-gap: 1rem;
-//   background-color: #fff;
-//   padding: 1.9rem 1rem;
-//   border-radius: 20px;
-// }
-
 .yelp-review img { border-radius: 50%; }
 
 .yelp-review-info {
@@ -310,4 +301,91 @@
       margin-left: 1rem;
     }
   }
+}
+
+// Monika's Testimony Section
+
+.home .monika-testimony {
+  font-size: 1.3rem;
+  color: color('green', 'dark');
+  background: linear-gradient(to bottom, color('blue', 'light') 3%, color('green', 'light') 17%);
+  padding: 6rem 0 2rem;
+}
+
+.featured-person-imgs {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.featured-pattern,
+.featured-person-img {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+
+.featured-pattern { width: 100%; }
+
+.featured-person-img {
+  width: 40%;
+  margin: auto;
+}
+
+.featured-person-testimony {
+  blockquote {
+    padding: 0 3rem;
+    margin-top: 1rem;
+  }
+}
+
+.featured-quote {
+  position: relative;
+  font-style: italic;
+
+  &::before {
+    content: '"';
+    position: absolute;
+    top: -3.1rem;
+    left: -3.2rem;
+    font-family: 'Courgette';
+    font-size: 6rem;
+    font-style: italic;
+    color: hsl(163, 82%, 89%);
+  }
+}
+
+.featured-person-testimony footer {
+  margin-top: 1.3rem;
+
+  :not(.featured-person-name) {
+    font-size: 1.1rem;
+  }
+}
+
+.featured-person-name {
+  font-weight: 700;
+}
+
+@include respond-to('min-medium') {
+  .featured-person-testimony {
+    overflow: hidden;
+
+    .container {
+      @include flex-space-between-children;
+
+      padding: 0;
+    }
+
+    blockquote { order: 1; }
+  }
+
+  .featured-person-imgs { order: 2; }
+
+  .featured-pattern {
+    width: 170%;
+    margin-top: -20%;
+    margin-left: -41%;
+  }
+
+  .featured-person-img { width: 70%; }
 }

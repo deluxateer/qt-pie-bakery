@@ -100,9 +100,21 @@ block main
       p ...and yes, we have pie.
       .pie-gallery
         +buildPreviewGallery(previewPieGallery)
-  //- ---------------- Photo Preview Section ---------------- -//
+  //- ---------------- Yelp Review Section ---------------- -//
   section.yelp-review-section
     h2 We Love Our Customers!
     .container
       .yelp-review-group
         +buildYelpReviewCards(yelpReviewData)
+  //- ---------------- Monika's Testimony Section ---------------- -//
+  section.monika-testimony.featured-person-testimony
+    .container
+      .featured-person-imgs
+        +image('patterns/star-green-slanted.svg', 'Slanted Green Star', true, true, 'featured-pattern')
+        +image('people/monika-bordeaux.jpg', 'Monika Bordeaux', true, true, 'featured-person-img')
+      blockquote
+        p.featured-quote Sweet halvah pudding caramels cake topping fruitcake cake. Sweet roll jelly beans lollipop soufflé carrot cake wafer. Chocolate bar soufflé icing sesame snaps. Sugar plum gingerbread halvah cake marshmallow pastry jujubes candy tootsie roll. Chupa chups lollipop marshmallow. Candy brownie macaroon.
+        footer
+          p.featured-person-name Monika Bordeaux
+          p Food Critic
+          p Gâteau Connoisseur, LLC.
