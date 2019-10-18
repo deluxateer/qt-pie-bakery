@@ -379,17 +379,15 @@
       padding: 2rem 0;
     }
 
-    blockquote {
-      flex: 3;
-      order: 1;
-    }
+    blockquote { flex: 3; }
   }
 
   .featured-person-imgs {
     flex: 2;
     align-self: flex-start;
-    order: 2;
   }
+  
+  .feature-imgs-right { order: 2; }
 
   .featured-pattern {
     width: 170%;

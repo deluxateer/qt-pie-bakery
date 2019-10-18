@@ -71,10 +71,10 @@ mixin buildYelpReviewCards(yelpReviewData)
               span= date
 
 mixin buildFeaturedTestimonial(testimonialData)
-  - const { name, shortName, title, affiliation, imageUrl, shapeUrl, shapeAlt, flareUrl, flareAlt, quote } = testimonialData;
+  - const { name, shortName, title, affiliation, imageUrl, shapeUrl, shapeAlt, flareUrl, flareAlt, imageRighthandSide, quote } = testimonialData;
   section.featured-person-testimony(class=`${shortName}-testimony`)
     .container
-      .featured-person-imgs
+      div(class=`featured-person-imgs ${imageRighthandSide ? 'feature-imgs-right' : '' }`)
         if shapeUrl
           +image(shapeUrl, shapeAlt, true, true, 'featured-pattern')
         +image(imageUrl, name, true, true, 'featured-person-img')
@@ -88,10 +88,11 @@ mixin buildFeaturedTestimonial(testimonialData)
               p= title
               p= affiliation
             +image(flareUrl, flareAlt, true)
-        footer
-          p.featured-person-name= name
-          p= title
-          p= affiliation
+        else
+          footer
+            p.featured-person-name= name
+            p= title
+            p= affiliation
 
 //- ---------------- MARKUP FOR PAGE ----------------
 
