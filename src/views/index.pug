@@ -30,10 +30,7 @@ block localVariables
     //- used to indicate this page is selected on the navbar item
   - const isHomePage = true;
 
-//- ---------------- MARKUP FOR PAGE ----------------
-
-prepend stylesheets
-  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
+//- ---------------- CUSTOM MIXINS ----------------
 
 mixin parseQuote(quote, addQuoteMarks=true)
   - const paragraphs = quote.split(/\n+/);
@@ -96,6 +93,11 @@ mixin buildFeaturedTestimonial(testimonialData)
           p= title
           p= affiliation
 
+//- ---------------- MARKUP FOR PAGE ----------------
+
+prepend stylesheets
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
+
 block main
   //- ---------------- Hero Section ---------------- -//
   section.hero
@@ -131,13 +133,19 @@ block main
         +buildYelpReviewCards(yelpReviewData)
   //- ---------------- Monika's Testimony Section ---------------- -//
   +buildFeaturedTestimonial(featuredTestimonyData.monika)
-  //- ---------------- Store Pictures Section ---------------- -//
-  section.store-pictures
+  //- ---------------- Store Ambience Section ---------------- -//
+  section.store-pictures.store-ambience
     .container
       +image('store-pics/customer-on-line.jpg', 'Customer On Line')
       +image('store-pics/bakery-bar.jpg', 'Bakery Bar')
       +image('store-pics/excited-customer.jpg', 'Excited Customer')
   //- ---------------- Jessica's Testimony Section ---------------- -//
   +buildFeaturedTestimonial(featuredTestimonyData.jessica)
+  //- ---------------- Customer Viewing Pictures Section ---------------- -//
+  section.store-pictures.customer-viewing-pictures
+    .container
+      +image('customer-pics/serving-cake.jpg', 'Customer Taking Cake')
+      +image('customer-pics/store-counter.jpg', 'Store Counter')
+      +image('customer-pics/customers-viewing-display.jpg', 'Customers Viewing Display')
   //- ---------------- Lorena's Testimony Section ---------------- -//
   +buildFeaturedTestimonial(featuredTestimonyData.lorena)

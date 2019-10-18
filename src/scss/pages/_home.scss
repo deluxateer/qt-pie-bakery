@@ -294,6 +294,8 @@
   .yelp-review {
     .card-content {
       flex-direction: row;
+
+      img { align-self: flex-start; }
     }
 
     &-info {
@@ -446,9 +448,7 @@ $lorena: (
 // Store Pictures Section
 
 .home .store-pictures {
-  $monika-bgc: map-get($monika, 'background-color');
-  background: linear-gradient(to bottom, color(nth($monika-bgc, 1), nth($monika-bgc, 2)) 3%, #fff 17%);
-  padding: 9rem 0 5rem;
+  padding: 9rem 0 4rem;
 }
 
 .store-pictures .container {
@@ -471,4 +471,14 @@ $lorena: (
   @include respond-to('min-large') {
     padding: 0;
   }
+}
+
+.store-ambience {
+  $monika-bgc: map-get($monika, 'background-color');
+  background: linear-gradient(to bottom, color(nth($monika-bgc, 1), nth($monika-bgc, 2)) 3%, #fff 17%);
+}
+
+.customer-viewing-pictures {
+  $jessica-bgc: map-get($jessica, 'background-color');
+  background: linear-gradient(to bottom, color(nth($jessica-bgc, 1), nth($jessica-bgc, 2)) 3%, #fff 17%);
 }
