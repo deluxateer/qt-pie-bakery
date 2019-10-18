@@ -442,3 +442,33 @@ $lorena: (
 @include custom-testimony-styles($monika);
 @include custom-testimony-styles($jessica);
 @include custom-testimony-styles($lorena);
+
+// Store Pictures Section
+
+.home .store-pictures {
+  $monika-bgc: map-get($monika, 'background-color');
+  background: linear-gradient(to bottom, color(nth($monika-bgc, 1), nth($monika-bgc, 2)) 3%, #fff 17%);
+  padding: 9rem 0 5rem;
+}
+
+.store-pictures .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+  column-gap: 2rem;
+
+  img {
+    width: 60%;
+    margin: auto;
+  }
+
+  @include respond-to('min-medium') {
+    grid-template-columns: repeat(3, 1fr);
+  
+    img { width: 100%; }
+  }
+
+  @include respond-to('min-large') {
+    padding: 0;
+  }
+}
