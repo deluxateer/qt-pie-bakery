@@ -303,12 +303,10 @@
   }
 }
 
-// Monika's Testimony Section
+// Featured Testimony General Styles
 
-.home .monika-testimony {
+.home .featured-person-testimony {
   font-size: 1.3rem;
-  color: color('green', 'dark');
-  background: linear-gradient(to bottom, color('blue', 'light') 3%, color('green', 'light') 17%);
   padding: 6rem 0 2rem;
 }
 
@@ -345,12 +343,15 @@
   &::before {
     content: '"';
     position: absolute;
-    top: -3.1rem;
-    left: -3.2rem;
+    top: -2.6rem;
+    left: -3.1rem;
     font-family: 'Courgette';
     font-size: 6rem;
     font-style: italic;
-    color: hsl(163, 82%, 89%);
+  }
+
+  p + p {
+    margin-top: 1rem;
   }
 }
 
@@ -373,13 +374,20 @@
     .container {
       @include flex-space-between-children;
 
-      padding: 0;
+      padding: 2rem 0;
     }
 
-    blockquote { order: 1; }
+    blockquote {
+      flex: 3;
+      order: 1;
+    }
   }
 
-  .featured-person-imgs { order: 2; }
+  .featured-person-imgs {
+    flex: 2;
+    align-self: flex-start;
+    order: 2;
+  }
 
   .featured-pattern {
     width: 170%;
@@ -389,3 +397,48 @@
 
   .featured-person-img { width: 70%; }
 }
+
+// Featured Testimony Custom Styles
+
+$monika: (
+  'name': 'monika',
+  'color-fade-top': ('blue', 'light'),
+  'background-color': ('green', 'light'),
+  'text-color': ('green', 'dark'),
+  'shape-color': ('green', 'seagreen')
+);
+$jessica: (
+  'name': 'jessica',
+  'color-fade-top': ('white', 'base'),
+  'background-color': ('pink', 'base'),
+  'text-color': ('purple', 'base'),
+  'shape-color': ('pink', 'dark')
+);
+$lorena: (
+  'name': 'lorena',
+  'color-fade-top': ('white', 'base'),
+  'background-color': ('yellow', 'extra-light'),
+  'text-color': ('yellow', 'dark'),
+  'shape-color': ('yellow', 'light')
+);
+
+@mixin custom-testimony-styles($testimony-data) {
+  $name: map-get($testimony-data, 'name');
+  $color-fade-top: map-get($testimony-data, 'color-fade-top');
+  $background-color: map-get($testimony-data, 'background-color');
+  $text-color: map-get($testimony-data, 'text-color');
+  $shape-color: map-get($testimony-data, 'shape-color');
+
+  .#{$name}-testimony {
+    color: color(nth($text-color, 1), nth($text-color, 2));
+    background: linear-gradient(to bottom, color(nth($color-fade-top, 1), nth($color-fade-top, 2)) 3%, color(nth($background-color, 1), nth($background-color, 2)) 17%);
+  
+    .featured-quote::before {
+      color: color(nth($shape-color, 1), nth($shape-color, 2));
+    }
+  }
+}
+
+@include custom-testimony-styles($monika);
+@include custom-testimony-styles($jessica);
+@include custom-testimony-styles($lorena);

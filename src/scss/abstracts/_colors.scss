@@ -3,6 +3,8 @@
 // colors to be used should be derived from these ones.
 // -----------------------------------------------------------------------------
 
+$white: ('base': #fff) !default;
+
 $gray: ('base': hsl(0, 0%, 44%)) !default;
 
 $red: ( 'base': hsl(0, 76%, 49%)) !default;
@@ -10,13 +12,14 @@ $red: ( 'base': hsl(0, 76%, 49%)) !default;
 $pink: (
   'base': hsl(319, 100%, 93%),
   'light': hsl(312, 33%, 97%),
-  'dark': hsl(317, 100%, 80%)
+  'dark': hsl(320, 75%, 84%),
+  'extra-dark': hsl(317, 100%, 80%)
 ) !default;
 
 $purple: ('base': hsl(318, 37%, 30%)) !default;
 
 $orange: (
-  'base': hsl(45, 90%, 60%),
+  'base': hsl(45, 89%, 60%),
   'dark': hsl(46, 99%, 44%)
 ) !default;
 
@@ -24,12 +27,15 @@ $brown: ('base': hsl(38, 80%, 30%)) !default;
 
 $yellow: (
   'base': hsl(50, 91%, 56%),
-  'light': hsl(50, 100%, 85%)
+  'extra-light': hsl(50, 100%, 85%),
+  'light': hsl(51, 79%, 76%),
+  'dark': hsl(50, 96%, 11%)
 ) !default;
 
 $green: (
   'base': hsl(162, 53%, 41%),
   'light': hsl(163, 100%, 94%),
+  'seagreen': hsl(163, 82%, 89%),
   'lime': hsl(72, 91%, 56%),
   'dark': hsl(163, 100%, 16%)
 ) !default;
@@ -54,6 +60,7 @@ $social: (
 /********** END SOCIAL MEDIA COLORS **********/
 
 $colors: (
+  'white': $white,
   'gray': $gray,
   'red': $red,
   'pink': $pink,
