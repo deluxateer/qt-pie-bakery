@@ -5,14 +5,13 @@
 .card {
   @include text-color-bgc(#fff, $text-color);
   
-  padding: 2rem;
-  border-radius: 15px;
+  padding: 3rem 2rem;
+  border-radius: 20px;
 
   &-content {
     @include flex-center-children;
-  
-    flex-direction: column;
-  
+
+    flex-direction: column;  
   }
 
   &-icon {

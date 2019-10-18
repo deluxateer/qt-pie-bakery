@@ -73,17 +73,51 @@ block main
       .pie-gallery
         +buildPreviewGallery(previewPieGallery)
   //- ---------------- Photo Preview Section ---------------- -//
-  section.yelp-review
-    //- heartimage
+  section.yelp-review-section
     h2 We Love Our Customers!
     .container
-      .yelp-testimony-group
-        .yelp-testimony
-          +image('people/donna-p.jpg', 'Donna P.')
-          .yelp-testimony-content
-            a.yelp-link(href='http://yelp.com', target='_blank')
-              i.fab.fa-yelp
-            blockquote.yelp-testimony-text(cite='https://yelp.com')
-              p "Muffin dragée icing tart. Gingerbread macaroon cookie."
-              footer Donna P.
-                div 10/24/19
+      .yelp-review-group
+        .yelp-review.card
+          .card-content
+            +image('people/donna-p.jpg', 'Donna P.')
+            .yelp-review-info
+              a.yelp-link(href='http://yelp.com', target='_blank')
+                i.fab.fa-yelp
+              blockquote.yelp-review-text(cite='https://yelp.com')
+                p "Muffin dragée icing tart. Gingerbread macaroon cookie."
+                footer
+                  div Donna P.
+                  span 10/24/19
+        .yelp-review.card
+          .card-content
+            +image('people/maddie-j.jpg', 'Maddie J.')
+            .yelp-review-info
+              a.yelp-link(href='http://yelp.com', target='_blank')
+                i.fab.fa-yelp
+              blockquote.yelp-review-text(cite='https://yelp.com')
+                p "Lollipop pudding cake danish pastry biscuit donut tootsie roll."
+                footer
+                  div Maddie J.
+                  span 08/12/19
+        .yelp-review.card
+          .card-content
+            +image('people/donna-p.jpg', 'Donna P.')
+            .yelp-review-info
+              a.yelp-link(href='http://yelp.com', target='_blank')
+                i.fab.fa-yelp
+              blockquote.yelp-review-text(cite='https://yelp.com')
+                p "Muffin dragée icing tart. Gingerbread macaroon cookie."
+                footer
+                  div Donna P.
+                  span 10/24/19
+        .yelp-review.card
+          .card-content
+            +image('people/donna-p.jpg', 'Donna P.')
+            .yelp-review-info
+              a.yelp-link(href='http://yelp.com', target='_blank')
+                i.fab.fa-yelp
+              blockquote.yelp-review-text(cite='https://yelp.com')
+                p "Muffin dragée icing tart. Gingerbread macaroon cookie."
+                footer
+                  div Donna P.
+                  span 10/24/19

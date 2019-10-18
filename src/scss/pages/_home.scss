@@ -25,6 +25,7 @@
   .navbar { z-index: 2; }
 
   section {
+    position: relative;
     padding: 3rem 1rem;
 
     @include respond-to('min-medium') {
@@ -101,17 +102,21 @@
   }
 
   @include respond-to('min-medium') {
-    position: relative;
-    z-index: -1;
+    z-index: 0;
 
     &::before {
       content: '';
       position: absolute;
-      top: -38vw;
+      top: -41vw;
       left: -56vw;
       z-index: 0;
-      height: 100vw;
+      height: 148vw;
       width: 100vw;
+      // top: -38vw;
+      // left: -56vw;
+      // z-index: 0;
+      // height: 100vw;
+      // width: 100vw;
       background-color: $secondary-color;
       border-radius: 50%;
     }
@@ -120,6 +125,7 @@
       display: flex;
       justify-content: space-between;
       align-items: stretch;
+      padding: 0;
     }
 
     .hero-img {
@@ -217,5 +223,91 @@
   .preview-gallery,
   .pie-gallery {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Yelp Review Section 
+
+.yelp-review-section {
+  background-color: color('blue', 'light');
+
+  > img { display: none; }
+
+  .container { margin-top: 4rem; }
+}
+
+.yelp-review-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1.9rem;
+  column-gap: 2.5rem;
+}
+
+// .yelp-review {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   column-gap: 1rem;
+//   background-color: #fff;
+//   padding: 1.9rem 1rem;
+//   border-radius: 20px;
+// }
+
+.yelp-review img { border-radius: 50%; }
+
+.yelp-review-info {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.yelp-link {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  background-color: color('social', 'yelp');
+  padding: 0.5rem 0.7rem;
+  border-radius: 50%;
+  
+  @include on-event {
+    color: #fff;
+  }
+}
+
+.yelp-review-text {
+  p { margin-bottom: 1rem; }
+
+  div {
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+}
+
+@include respond-to('min-medium') {
+  .yelp-review {
+    background-color: hsla(0, 0, 100, 0.85);
+
+    &-section {
+      background: color('blue', 'light') no-repeat image('patterns/hearts-mirrored.svg') center;
+      background-size: cover;
+    }
+
+    &-section .container { padding: 0; }
+    
+    &-group {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@include respond-to('min-large') {
+  .yelp-review {
+    .card-content {
+      flex-direction: row;
+    }
+
+    &-info {
+      margin-top: 0;
+      margin-left: 1rem;
+    }
   }
 }
