@@ -2,6 +2,8 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 
+$featured-animation-duration: 1.5s;
+
 // General Styles
 
 .home body {
@@ -129,6 +131,8 @@
     }
 
     .hero-img {
+      @include animate(-230px);
+
       display: block;
       flex: 1;
     }
@@ -139,6 +143,14 @@
       flex-direction: column;
       justify-content: space-between;
       text-align: left;
+    }
+
+    .hero-info {
+      @include animate(230px);
+    }
+
+    .opening-hours {
+      @include animate(230px, -230px);
     }
   }
   
@@ -201,7 +213,7 @@
 .preview-gallery .preview-item {
   position: relative;
 
-  img:last-child {
+  img:last-child {    
     position: absolute;
     top: 0;
     right: 0;
@@ -216,6 +228,20 @@
   .preview-gallery,
   .pie-gallery {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .preview-gallery .preview-item { 
+    img:first-child {
+      @include animate(0, 0, 0, 2s, 3turn, 0);
+    }
+    
+    img:last-child {
+      @include animate(0, 0, 0, 2s, 0, 0);
+    }
+  }
+
+  .pie-gallery img {
+    @include animate(0, 0, 0, 2s, 0, 0);
   }
 }
 
@@ -391,7 +417,9 @@
     }
 
     blockquote {
+      @include animate(0);
       flex: 3;
+      transition-delay: $featured-animation-duration;
       margin-top: 0;
     }
   }
@@ -404,12 +432,17 @@
   .feature-imgs-right { order: 2; }
 
   .featured-pattern {
+    @include animate(0, 0, 0, $featured-animation-duration, 1turn, 0);
     width: 200%;
     margin-top: -12%;
     margin-left: -51%; 
   }
 
-  .featured-person-img { width: 70%; }
+  .featured-person-img {
+    @include animate(0);
+    transition-delay: $featured-animation-duration;
+    width: 70%;
+  }
 }
 
 // Featured Testimony Custom Styles
@@ -456,6 +489,18 @@ $lorena: (
 @include custom-testimony-styles($monika);
 @include custom-testimony-styles($jessica);
 @include custom-testimony-styles($lorena);
+
+@include respond-to('min-medium') {
+  .jessica-testimony img,
+  .jessica-testimony blockquote {
+    transition-delay: 1s;
+  }
+  
+  .lorena-testimony .featured-pattern {
+    @include animate(0, 0, 0, $featured-animation-duration, 1turn, 3);
+  }
+}
+
 
 // Store Pictures Section
 

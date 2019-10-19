@@ -78,7 +78,7 @@ mixin buildFeaturedTestimonial(testimonialData)
         if shapeUrl
           +image(shapeUrl, shapeAlt, true, true, 'featured-pattern')
         +image(imageUrl, name, true, true, 'featured-person-img')
-      blockquote
+      blockquote(data-animate)
         .featured-quote
           +parseQuote(quote, false)
         if flareUrl
@@ -103,15 +103,15 @@ block main
   //- ---------------- Hero Section ---------------- -//
   section.hero
     .container
-      .hero-img
-        +image('hero/macarons.jpg', 'Macarons', true, false)
+      .hero-img(data-animate)
+        +image('hero/macarons.jpg', 'Macarons', false, false)
       .hero-content
-        .hero-info
+        .hero-info(data-animate)
           h1 Bring your sweet tooth
           p Pie, cakes, anything baked and sweet. We have it all here.
           a.cta.btn.btn-secondary.btn-large.btn-round(href='tel:1-111-111-1111') Call And Order
             .phone-number +1 (111) 111-1111
-        p.opening-hours Opening Hours: <b>Mon-Fri:</b> 9am - 9pm / <b>Weekend:</b> 9am - 10pm
+        p.opening-hours(data-animate) Opening Hours: <b>Mon-Fri:</b> 9am - 9pm / <b>Weekend:</b> 9am - 10pm
   //- ---------------- Photo Preview Section ---------------- -//
   section.photo-preview
     .preview-info

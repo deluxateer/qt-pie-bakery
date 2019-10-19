@@ -9,7 +9,7 @@ const animateItem = item => {
 };
 
 const itemOptions = {
-  threshold: 0,
+  threshold: 0.15,
   rootMargin: '0px 0px 180px 0px',
 };
 

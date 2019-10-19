@@ -85,9 +85,11 @@
 /// @param {Number} $y - y coordinate
 /// @param {Number} $z - z coordinate
 /// @param {Number} $duration - time duration for animation
-@mixin animate($x, $y: 0, $z: 0, $duration: 0.9s) {
-  transform: translate3d($x, $y, $z);
-  transition: transform $duration, visibility $duration, opacity $duration;
+/// @param {Number} $rotation - number of degrees to rotate
+/// @param {Number} $scale - percentage to scale (0 - 1)
+@mixin animate($x, $y: 0, $z: 0, $duration: 0.9s, $rotation: 0deg, $scale: 1) {
+  transform: translate3d($x, $y, $z) rotate($rotation) scale($scale);
+  transition: transform $duration, visibility $duration, opacity $duration ease-in-out;
   visibility: hidden;
   opacity: 0;
 }
