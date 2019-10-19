@@ -358,7 +358,7 @@
 }
 
 .featured-person-testimony footer {
-  margin-top: 1.3rem;
+  margin-top: 1.8rem;
 
   :not(.featured-person-name) {
     font-size: 1.1rem;
@@ -367,6 +367,17 @@
 
 .featured-person-name {
   font-weight: 700;
+}
+
+.flare-footer {
+  position: relative;
+
+  img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 12%;
+  }
 }
 
 @include respond-to('min-medium') {
@@ -379,7 +390,10 @@
       padding: 2rem 0;
     }
 
-    blockquote { flex: 3; }
+    blockquote {
+      flex: 3;
+      margin-top: 0;
+    }
   }
 
   .featured-person-imgs {
@@ -390,9 +404,9 @@
   .feature-imgs-right { order: 2; }
 
   .featured-pattern {
-    width: 170%;
-    margin-top: -20%;
-    margin-left: -41%;
+    width: 200%;
+    margin-top: -12%;
+    margin-left: -51%; 
   }
 
   .featured-person-img { width: 70%; }
@@ -480,3 +494,58 @@ $lorena: (
   $jessica-bgc: map-get($jessica, 'background-color');
   background: linear-gradient(to bottom, color(nth($jessica-bgc, 1), nth($jessica-bgc, 2)) 3%, #fff 17%);
 }
+
+// Pinterest Info Section
+.pinterest-info {
+  background-color: #fff;
+
+  p {
+    font-size: 1.3rem;
+    margin-bottom: 1.3rem;
+  }
+}
+
+.pinterest-imgs {
+  img {
+    width: 80%;
+    margin: 0 auto;
+
+    + img {
+      margin-top: 1rem;
+    }
+  }
+}
+
+@include respond-to('min-medium') {
+  .pinterest-imgs {
+    @include flex-space-between-children;
+
+    img {
+      width: 30%;
+      margin: 0;
+      
+      + img { margin: 0; }
+    }
+  }
+}
+
+// CTA Section
+.call-to-action {
+  $gradient-color: transparentize($primary-color, 0.15);
+
+  @include flex-center-children;
+  flex-direction: column;
+  background: linear-gradient(to bottom, $gradient-color, $gradient-color), image('cta/trays-of-baked-goods.jpg') no-repeat center;
+
+  h2,
+  a {
+    color: #fff;
+
+    @include on-event {
+      color: #fff;
+    }
+  }
+
+  h2 { margin: 1.5rem 0; }
+}
+

@@ -83,7 +83,7 @@ mixin buildFeaturedTestimonial(testimonialData)
           +parseQuote(quote, false)
         if flareUrl
           footer.flare-footer
-            .footer-info
+            .quote-footer-info
               p.featured-person-name= name
               p= title
               p= affiliation
@@ -150,3 +150,18 @@ block main
       +image('customer-pics/customers-viewing-display.jpg', 'Customers Viewing Display')
   //- ---------------- Lorena's Testimony Section ---------------- -//
   +buildFeaturedTestimonial(featuredTestimonyData.lorena)
+  //- ---------------- Pinterest Info Section ---------------- -//
+  section.pinterest-info
+    .container
+      h2 We're Still Experimenting!
+      p In the kitchen we're constantly testing and tasting (really, devouring) new creations, which we hope to add to our #[a(href='./menu.html') menu]. Check out our #[a(href=socialMediaItems.pinterest.url target='_blank') Pinterest feed] as inspiration for your own powder-sugar-filled endeavors!
+      .pinterest-imgs
+        +image('pinterest-pics/tart2.jpg', 'Tart')
+        +image('pinterest-pics/apple-pie2.jpg', 'Apple Pie')
+        +image('pinterest-pics/creme-brulee1.jpg', 'Creme Brulee')
+  //- ---------------- Call To Action Section ---------------- -//
+  section.call-to-action
+    +image('patterns/heart-white.svg', 'White Heart')
+    h2 Seen Enough? Come grab a bit today!
+    a.cta.btn.btn-secondary.btn-large.btn-round(href='tel:1-111-111-1111') Call And Order
+      .phone-number +1 (111) 111-1111
