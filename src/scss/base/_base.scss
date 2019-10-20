@@ -33,3 +33,7 @@ img {
   display: block;
   border-radius: 20px;
 }
+
+@include respond-to('extra-large') {
+  html { font-size: 22px; }
+}

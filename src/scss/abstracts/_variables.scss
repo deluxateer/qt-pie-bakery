@@ -39,7 +39,8 @@ $breakpoints: (
   'min-medium' : ( min-width:  768px ),
   'max-medium' : ( max-width:  768px ),
   'min-large'  : ( min-width: 1024px ),
-  'max-large'  : ( max-width: 1024px )
+  'max-large'  : ( max-width: 1024px ),
+  'extra-large': ( min-width: 2000px )
 ) !default;
 
 /// Relative or absolute URL where all assets are served from

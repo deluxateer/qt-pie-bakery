@@ -56,7 +56,7 @@ $nav-link-hover-bg-color: $primary-color-light;
     opacity: 0;
     list-style-type: none;
     background-color: $navbar-bgc;
-    padding: 15px;
+    padding: 1rem;
   }
 
   & &-active {
@@ -76,7 +76,7 @@ $nav-link-hover-bg-color: $primary-color-light;
   transition: background-color 0.6s, color 0.3s;
   font-size: 1.4rem;
   background-color: $nav-link-responsive-bg-color;
-  padding: 10px;
+  padding: 0.625rem;
   border-radius: 20px;
 
   &-active {

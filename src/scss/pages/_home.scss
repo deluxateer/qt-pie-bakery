@@ -142,6 +142,10 @@ $featured-animation-duration: 1.5s;
       flex: 1;
       flex-direction: column;
       justify-content: space-between;
+    }
+
+    h1,
+    .hero-content {
       text-align: left;
     }
 
@@ -626,6 +630,6 @@ $lorena: (
     }
   }
 
-  h2 { margin: 1.5rem 0; }
 }
 
+.home .call-to-action h2 { margin: 3.5rem 0; }
