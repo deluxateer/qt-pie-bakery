@@ -32,14 +32,14 @@ mixin buildMenuItems(menuItem)
   - const { itemName, price, description } = menuItem
   .menu-item
     .item-info
-      h4.item-name= itemName
+      h3.item-name= itemName
       span.price= `$${price.toFixed(2)}`
     p.item-description= description
 
 mixin buildMenu(menuGroupData)
   each menuGroupInfo, groupName in menuGroupData
     .menu-group(class=groupName.toLowerCase())
-      h3= groupName
+      h2= groupName
         if menuGroupInfo.extraInfo
           .extra-info= ` ${menuGroupInfo.extraInfo}`
       .menu-group-items
@@ -53,6 +53,6 @@ prepend stylesheets
 
 block main
   .container(data-animate)
-    h2 Menu
+    h1 Menu
     .divider
     +buildMenu(menuGroupData)
