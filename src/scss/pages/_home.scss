@@ -66,7 +66,6 @@ $featured-animation-duration: 1.5s;
 
 .hero {
   @include text-color-bgc($primary-color, #000, #fff, 70);
-  
   padding: 2rem 0 3rem;
 
   .hero-img {
@@ -114,11 +113,6 @@ $featured-animation-duration: 1.5s;
       z-index: 0;
       height: 148vw;
       width: 100vw;
-      // top: -38vw;
-      // left: -56vw;
-      // z-index: 0;
-      // height: 100vw;
-      // width: 100vw;
       background-color: $secondary-color;
       border-radius: 50%;
     }

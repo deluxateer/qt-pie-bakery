@@ -27,7 +27,7 @@ block localVariables
     
     //- class to put on body tag for custom styling
   - const pageName = 'home';
-    //- used to indicate this page is selected on the navbar item
+    //- used to indicate this page is the home page (use different logo pic)
   - const isHomePage = true;
 
 //- ---------------- CUSTOM MIXINS ----------------
@@ -146,7 +146,6 @@ block main
   section.store-pictures.customer-viewing-pictures
     .container
       +image('customer-pics/serving-cake.jpg', 'Customer Taking Cake')
-      //- +image('customer-pics/store-counter.jpg', 'Store Counter')
       +image('customer-pics/customers-viewing-display.jpg', 'Customers Viewing Display')
   //- ---------------- Lorena's Testimony Section ---------------- -//
   +buildFeaturedTestimonial(featuredTestimonyData.lorena)
