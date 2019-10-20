@@ -156,9 +156,15 @@ block main
       h2 We're Still Experimenting!
       p In the kitchen we're constantly testing and tasting (really, devouring) new creations, which we hope to add to our #[a(href='./menu.html') menu]. Check out our #[a(href=socialMediaItems.pinterest.url target='_blank') Pinterest feed] as inspiration for your own powder-sugar-filled endeavors!
       .pinterest-imgs
-        +image('pinterest-pics/tart2.jpg', 'Tart')
-        +image('pinterest-pics/apple-pie2.jpg', 'Apple Pie')
-        +image('pinterest-pics/creme-brulee1.jpg', 'Creme Brulee')
+        a(href='http://pinterest.com' target='_blank')
+          +image('pinterest-pics/tart2.jpg', 'Tart')
+          .hover-cta View on Pinterest
+        a(href='http://pinterest.com' target='_blank')
+          +image('pinterest-pics/apple-pie2.jpg', 'Apple Pie')
+          .hover-cta View on Pinterest
+        a(href='http://pinterest.com' target='_blank')
+          +image('pinterest-pics/creme-brulee1.jpg', 'Creme Brulee')
+          .hover-cta View on Pinterest
   //- ---------------- Call To Action Section ---------------- -//
   section.call-to-action
     +image('patterns/heart-white.svg', 'White Heart')

@@ -551,13 +551,41 @@ $lorena: (
 }
 
 .pinterest-imgs {
-  img {
-    width: 80%;
-    margin: 0 auto;
-
-    + img {
+  a {
+    display: block;
+    position: relative;
+    
+    + a {
       margin-top: 1rem;
     }
+
+    img {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .hover-cta {
+      @include flex-center-children;
+  
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: visibility 0.3s, opacity 0.3s ease-in-out;
+      visibility: hidden;
+      opacity: 0;
+      color: #fff;
+      width: 80%;
+      background: transparentize(color('social', 'pinterest'), 0.4);
+      border-radius: 20px;
+      margin: 0 auto;
+    }
+  
+    &:hover .hover-cta {
+      visibility: visible;
+      opacity: 1;
+    } 
   }
 }
 
@@ -569,8 +597,9 @@ $lorena: (
       width: 30%;
       margin: 0;
       
-      + img { margin: 0; }
     }
+
+    a + a { margin: 0; }
   }
 }
 
