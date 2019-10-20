@@ -62,7 +62,7 @@ mixin buildYelpReviewCards(yelpReviewData)
       .card-content
         +image(image, name)
         .yelp-review-info
-          a.yelp-link(href=yelpReviewUrl, target='_blank', rel='noopener')
+          a.yelp-link(href=yelpReviewUrl, target='_blank', rel='noopener', aria-label='Link to Yelp Review')
             i.fab.fa-yelp
           blockquote.yelp-review-text(cite=yelpReviewUrl)
             +parseQuote(quote)

@@ -24,7 +24,7 @@ mixin navbar(navbarItems, activeNavbarItem)
           +image('logo-white.png', 'Logo', false, false)
         else
           +image('logo.png', 'Logo', false, false)
-      button.navbar-toggle
+      button.navbar-toggle(aria-label='Navigation Bar Toggle')
         i.fas.fa-bars
     ul.navbar-submenu
       each value, key in navbarItems
