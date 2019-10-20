@@ -49,7 +49,7 @@ mixin buildPreviewGallery(previewGalleryData)
     - const { shape, image } = itemSet;
     .preview-item
       if shape
-        +image(shape.url, null, true)
+        +image(shape.url, shape.alt, true)
       if image
         +image(image.url, image.alt, true)
       else
@@ -62,7 +62,7 @@ mixin buildYelpReviewCards(yelpReviewData)
       .card-content
         +image(image, name)
         .yelp-review-info
-          a.yelp-link(href=yelpReviewUrl, target='_blank')
+          a.yelp-link(href=yelpReviewUrl, target='_blank', rel='noopener')
             i.fab.fa-yelp
           blockquote.yelp-review-text(cite=yelpReviewUrl)
             +parseQuote(quote)
@@ -119,7 +119,7 @@ block main
       p Just a taste of what we have in store, for you
     .container
       .instagram-logo
-        a(href=socialMediaItems.instagram.url)
+        a(href=socialMediaItems.instagram.url, rel='noopener')
           +image('instagram-logo.png', 'Instagram Logo')
       .preview-gallery
         +buildPreviewGallery(previewShapeGallery)
@@ -146,7 +146,7 @@ block main
   section.store-pictures.customer-viewing-pictures
     .container
       +image('customer-pics/serving-cake.jpg', 'Customer Taking Cake')
-      +image('customer-pics/store-counter.jpg', 'Store Counter')
+      //- +image('customer-pics/store-counter.jpg', 'Store Counter')
       +image('customer-pics/customers-viewing-display.jpg', 'Customers Viewing Display')
   //- ---------------- Lorena's Testimony Section ---------------- -//
   +buildFeaturedTestimonial(featuredTestimonyData.lorena)
@@ -154,15 +154,15 @@ block main
   section.pinterest-info
     .container
       h2 We're Still Experimenting!
-      p In the kitchen we're constantly testing and tasting (really, devouring) new creations, which we hope to add to our #[a(href='./menu.html') menu]. Check out our #[a(href=socialMediaItems.pinterest.url target='_blank') Pinterest feed] as inspiration for your own powder-sugar-filled endeavors!
+      p In the kitchen we're constantly testing and tasting (really, devouring) new creations, which we hope to add to our #[a(href='./menu.html') menu]. Check out our #[a(href=socialMediaItems.pinterest.url target='_blank' rel='noopener') Pinterest feed] as inspiration for your own powder-sugar-filled endeavors!
       .pinterest-imgs
-        a(href='http://pinterest.com' target='_blank')
+        a(href='http://pinterest.com' target='_blank' rel='noopener')
           +image('pinterest-pics/tart2.jpg', 'Tart')
           .hover-cta View on Pinterest
-        a(href='http://pinterest.com' target='_blank')
+        a(href='http://pinterest.com' target='_blank' rel='noopener')
           +image('pinterest-pics/apple-pie2.jpg', 'Apple Pie')
           .hover-cta View on Pinterest
-        a(href='http://pinterest.com' target='_blank')
+        a(href='http://pinterest.com' target='_blank' rel='noopener')
           +image('pinterest-pics/creme-brulee1.jpg', 'Creme Brulee')
           .hover-cta View on Pinterest
   //- ---------------- Call To Action Section ---------------- -//

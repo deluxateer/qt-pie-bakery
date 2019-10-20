@@ -538,6 +538,12 @@ $lorena: (
 .customer-viewing-pictures {
   $jessica-bgc: map-get($jessica, 'background-color');
   background: linear-gradient(to bottom, color(nth($jessica-bgc, 1), nth($jessica-bgc, 2)) 3%, #fff 17%);
+
+  @include respond-to('min-medium') {
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }
 
 // Pinterest Info Section

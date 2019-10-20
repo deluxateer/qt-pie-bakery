@@ -9,7 +9,7 @@
 //- @param {String} linkClasses - CSS classes for styling the a tag
 mixin nav-items-icons(url, iconClasses, newTab=true, linkClasses)
   li
-    a.nav-link(href=url, target=(newTab ? '_blank' : null), class=linkClasses) #[i(class=iconClasses)]
+    a.nav-link(href=url, target=(newTab ? '_blank' : null), class=linkClasses, rel='noopener') #[i(class=iconClasses)]
 
 //- generic social media links
 //- @param {Array} navItems - data for each social media link you want to include
