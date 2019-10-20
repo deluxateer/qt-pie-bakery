@@ -7,7 +7,6 @@
 }
 
 .catering-and-parties {
-
   h2 { font-size: 1.8rem; }
   
   main p { margin: 1.3rem 0; }
@@ -20,7 +19,6 @@
       width: 60%;
     }
   }
-  
 }
 
 main .venue-rental img {
@@ -28,7 +26,7 @@ main .venue-rental img {
 }
 
 main .catering img {
-  margin-top: 3rem;
+  margin: 3rem auto;
 }
 
 .catering-info {
@@ -51,9 +49,10 @@ main .catering img {
 
   .venue-info,
   .catering img {
-    grid-column-start: 3;
-    grid-column-end: 4;
+    grid-column: 3/4;
   }
+
+  .catering-info { grid-row: 1/2; }
 
   .venue-rental img {
     @include animate(0, 230px);
